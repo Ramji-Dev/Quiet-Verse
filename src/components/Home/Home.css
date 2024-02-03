@@ -1,0 +1,253 @@
+.home-container{
+    padding: 0 2%;
+    position: relative;
+    overflow: hidden;
+}
+
+.heading{
+    padding: 20% 0 10% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}   
+
+h1{
+    font-family: Dlight;
+    font-size: 13vw;
+    font-weight: 500;
+    letter-spacing: 1vw;
+    opacity: 0;
+    color: #9A3B3B;
+    position: relative;
+}
+
+h1:nth-child(1) {
+    left: -14%;
+}
+
+h1:nth-child(2) {
+    left: 8%;
+}
+
+h1:nth-child(3) {
+    left: -6%;
+}
+
+
+
+.line{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.line-text{
+    opacity: 0;
+}
+
+hr{
+    width: 0%;
+    border: 0.1vw solid #9A3B3B;
+    padding: 0 5%;
+    opacity: 0;
+}
+
+h5{
+    font-family: bold;
+    font-size: 2.5vw;
+    color: #9A3B3B;
+    letter-spacing: 0.3vw;
+    padding: 0 1vw;
+}
+
+.heart{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.quote{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    opacity: 0;
+}
+
+.feeling{
+    font-family: bold;
+    color: #9A3B3B;
+    margin-bottom: 10%;
+    letter-spacing: 0.2vw;
+    font-size: 4.5vw;    
+}
+
+.leaf-heart{
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.book-container{
+    width: 100%;
+    flex-wrap:wrap;
+    display: flex;
+    flex-grow: 100;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 10%;
+}
+
+.product-image{
+    opacity: 1;
+}
+
+.pointer{
+    height: 2vw;
+    width: 7vw;
+    border-radius: 0.3vw;
+    background-color: #C08261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 11;
+    opacity: 0;
+    scale: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.purchase{
+    font-size: 1vw;
+    font-family: light;
+    color: #FFF3E2;
+}
+
+.thought{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sayings{
+    font-size: 6vw;
+    color: #9A3B3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.saying-one,
+.saying-two{
+    font-family: Dlight;
+    position: relative;
+    opacity: 0;
+}
+
+.sayings span:nth-child(1) {
+    left: -20%;
+}
+
+.sayings span:nth-child(2) {
+    left: 26%;
+}
+
+.test{
+    height: 100vh;
+}
+
+@media (min-width: 420px) {
+    
+}
+
+@media (min-width: 480px) {
+    
+}
+
+@media (min-width: 640px) { 
+    .heading{
+        padding: 10% 0;
+    }
+    h1{
+        font-size: 10vw;
+    }
+
+    h1:nth-child(1) {
+        left: -20%;
+    }
+    
+    h1:nth-child(2) {
+        left: 15%;
+    }
+    
+    h1:nth-child(3) {
+        left: -13%;
+    }
+
+    h5{
+        font-size: 1.2vw;
+    }
+
+    .feeling{
+        font-size: 3vw;
+    }
+    
+    /* .leaf-heart{
+        min-width: 45vw;
+        max-width: 1.1vw;
+    } */
+
+    .sayings{
+        font-size: 4vw;
+    }
+}
+
+
+@media (min-width: 768px) { 
+    
+    .heart{
+        flex-direction: row;
+        
+    }
+
+    .quote{
+        width: 60%;
+    }
+
+    .feeling{
+        font-size: 2.1vw;
+    }
+
+    .pointer{
+        display:flex;
+    }
+}
+
+@media (min-width: 860px) {
+    
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1024px) { 
+    
+}
+
+@media (min-width: 1280px) { 
+}
+
+
+@media (min-width: 1536px) { 
+}

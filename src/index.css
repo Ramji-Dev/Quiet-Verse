@@ -1,0 +1,53 @@
+:root{
+  --primary-color: #9A3B3B;
+  
+}
+
+@font-face {
+  font-family: bold;
+  src: url(./fonts/Almarena-Bold.ttf);
+}
+
+@font-face {
+  font-family: regular;
+  src: url(./fonts/Almarena-Regular.ttf);
+}
+
+@font-face {
+  font-family: light;
+  src: url(./fonts/Almarena-Light.ttf);
+}
+
+@font-face {
+  font-family: Dbold;
+  src: url(./fonts/Almarena-Display-Bold.ttf);
+}
+
+@font-face {
+  font-family: Dregular;
+  src: url(./fonts/Almarena-Display-Regular.ttf);
+}
+
+@font-face {
+  font-family: Dlight;
+  src: url(./fonts/Almarena-Display-Light.ttf);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'display-regular';
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  background-color: #FFF3E2;
+}
+
+*::selection{
+  color: #FFF3E2;
+  background-color: #9A3B3B;
+}

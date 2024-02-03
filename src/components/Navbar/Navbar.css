@@ -1,0 +1,250 @@
+*{
+    z-index: 10;
+}
+
+a{
+    text-decoration: none;
+    font-family: light;
+    color: #9A3B3B;
+}
+
+/* .container{
+    min-height: 100svh;
+    position: relative;  
+    overflow: hidden
+} */
+
+nav{
+    /* background-color: red; */
+    width: 100%;
+    min-height: 12vw;
+    padding: 4% 5%;
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+
+.links{
+    display: none;
+}
+
+svg{
+    width: 8vw;
+}
+
+.icons{
+    width: 20vw;
+    gap: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1vw;
+    border: 1px solid #c0826141;
+    border-radius: 100vw;
+    position: relative;
+    background-color: #ffffff01;
+    backdrop-filter: blur(2px);
+}
+
+.cart,
+.close,
+.menu-show{
+    font-size: 4vw;
+    cursor: pointer;
+    color: #9A3B3B;
+}
+
+.close{
+    display: none;
+}
+
+.menu-container{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+menu{
+    min-height: 100%;  
+    width: 70%;
+    background-color: #611E1C;
+    position: fixed ;
+    transform: translateX(143%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4vw 0;
+    z-index: 99;
+}
+
+.pages{
+    min-height: 70svh;
+    /* width: 50%; */
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* padding-top: 100%; */
+    padding-left: 6vw;
+}
+
+h3{
+    color: #FFF3E2;
+    font-family: Dbold;
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 500;
+    padding: 0.5vw 1vw;
+    display: inline;
+    line-height: 1.5;
+}
+
+.connect{
+    /* min-height: 100svh; */
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+    padding-left: 6vw;
+}
+
+.interact{
+    font-family: light;
+    font-weight: 10;
+    color: #C08261;
+}
+
+h6{
+    color: #FFF3E2;
+    font-family: light;
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-weight: 500;
+    padding: 0.5vw 1vw;
+    display: inline;
+    line-height: 1.5;
+    /* background-color: red; */
+}
+
+@media (min-width: 640px) {
+    nav{
+        /* background-color: red; */
+        min-height: 6vw;
+        padding: 0 2%;
+    }
+
+    .links-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2vw;
+    }
+    
+    .links{
+        display: flex;
+        gap: 2vw;
+    }
+    
+    h4{
+        color: #9A3B3B;
+        font-size: 1.2vw;
+        font-family: light;
+        font-weight: 500;
+        text-transform: uppercase;
+        border: 1px solid #c0826141;
+        padding: 0.5vw 1vw;
+        border-radius: 100vw;
+        position: relative;
+        background-color: #ffffff01;
+        backdrop-filter: blur(2px);
+    }
+    
+    svg{
+        width: 4vw;
+    }
+    
+    .icons{
+        width: 6vw;
+        padding: 0.5vw 1vw;
+    }
+    
+    .cart,
+    .close,
+    .menu-show{
+        font-size: 1.2vw;
+    }
+
+    menu{
+        /* justify-content: space-around; */
+        flex-direction: row;
+        padding: 2vw 0;
+    }
+    
+    .pages{
+        min-height: 70svh;
+        width: 50%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: flex-end;
+        /* padding-top: 100%; */
+        /* padding-left: 6vw; */
+
+    }
+    
+    h3{
+        color: #FFF3E2;
+        font-family: Dbold;
+        text-transform: uppercase;
+        font-size: 4vw;
+        font-weight: 500;
+        padding: 0.5vw 1vw;
+        display: inline;
+        line-height: 1.2;
+    }
+    
+    .connect{
+        align-items: flex-end;
+    }
+    
+    h6{
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width: 768px) { 
+
+}
+
+@media (min-width: 1024px) { 
+
+}
+
+@media (min-width: 1280px) { 
+
+}
+
+@media (min-width: 1536px) { 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* for landscape */
+/* @media only screen and (orientation: landscape) {
+    .links{
+        display: none;
+    }
+} */
