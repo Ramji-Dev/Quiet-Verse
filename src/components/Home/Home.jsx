@@ -1,19 +1,22 @@
 import React, { useRef } from 'react'
 import './Home.css'
-import gsap, { Expo, Power4} from 'gsap'
+import gsap, { Expo} from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react'
 import Book from '../Book';
 import Showcase from '../Showcase/Showcase';
+import Heartful from '../Heartful/Heartful';
+import Library from '../Library/Library';
+import Form from '../Form/Form';
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
 
     const allRef = useRef(null);
-    // // const tl = useRef(null);
+    const tl = useRef(null);
+    const tl1 = useRef(null);
     
     useGSAP(() => {
-        // tl.current = gsap.timeline()
         gsap.to('h1', {
             opacity: 1,
             duration:1,
@@ -44,7 +47,10 @@ function Home() {
                 scroller: 'body', 
                 trigger: 'hr',
                 start: 'top 80%',
-                // markers: 1
+                // markers: {
+                //     startColor: "purple",
+                //     endColor: "fuchsia",
+                // }
             }
         })
 
@@ -54,22 +60,8 @@ function Home() {
             scrollTrigger: {
                 scroller: 'body',
                 trigger: '.line-text',
-                start: 'top 79%',
-                // markers: 1
-            }
-        })
-
-        gsap.to('.quote, .leaf-heart', {
-            opacity: 1,
-            stagger: 0.3,
-            duration: 1,
-            delay: 1 ,
-            scrollTrigger: {
-                scroller: 'body',
-                trigger: 'img',
-                start: '140% 75%',
-                end: '140% 10%',
-                // markers:1
+                start: 'top 80%',
+                // markers: 1,      
             }
         })
 
@@ -80,9 +72,9 @@ function Home() {
             opacity: 1,
             scrollTrigger: {
                 scroller: 'body',
-                trigger: '.saying-one, .saying-two',
+                trigger: '.saying-one',
                 start: 'center 70%',
-                markers: 1  
+                // markers: 1  
             }
         })
         
@@ -93,9 +85,38 @@ function Home() {
             opacity: 1,
             scrollTrigger: {
                 scroller: 'body',
-                trigger: '.saying-one, .saying-two',
+                trigger: '.saying-two',
                 start: 'center 70%',
+                // markers: 1  
             }
+        })
+        
+        // tl.current = gsap.timeline()
+        tl.current = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.home-container',
+                start: 'center-=5% 70%',
+                end: 'center-=5% -50%',
+                // markers: 1,
+                scrub: 0.1
+            }
+        }).to('.home-container', {
+            backgroundColor: '#611D1B',
+        })
+
+        tl.current = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.home-container',
+                start: 'center+=10% 30%',
+                end: 'center+=10% 10%',
+                // markers: {
+                //     startColor: '#adff2d',
+                //     endColor: '#242424'
+                // },
+                scrub: 0.1
+            }
+        }).to('.home-container', {
+            backgroundColor: '#FFF3E2'
         })
 
     }, {scope: allRef.current})
@@ -133,18 +154,13 @@ function Home() {
 
             <Showcase />
 
-            <div className="line">
-                <h5>Mind</h5>
+            <div className="line" id='elevate'>
+                <h5 className='text-mind'>Mind</h5>
                 <hr />
-                <h5 className='line-text'>Heart</h5>
+                <h5 className='line-text text-heart'>Heart</h5>
             </div>
-            <div className="heart">
-                <div className="quote">
-                    <p className='feeling'>Elevate minds, inspire hearts. Our books spark profound insights, fostering growth, resilience, and a lasting impact on readers.</p>
-                    <cite className='wise'>~ A Wise Man</cite>
-                </div>
-                <img src="./images/heart1.png" alt="heart" className='leaf-heart'/>
-            </div>
+            
+            <Heartful />
 
             <div className="pointer"><h6 className='purchase'>PURCHASE</h6></div>
             <div className="book-container" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} ref={cursorRef}> 
@@ -156,13 +172,24 @@ function Home() {
                 <Book image={'./images/circle.webp'} name={'The Thirteenth Circle'} price={25}/>
             </div>
 
-            <div className="thought">
+            <div className="thought" >
                 <p className='sayings'>
                     <span className='saying-one'>With every book lies a world</span>
                     <span className='saying-two'>Waiting to be discovered.</span>
                 </p>
             </div>
 
+            <Library />
+            <div className="library-p">
+                <p className='about'>
+                    <span>This is where we curate a sanctuary of words. Our library transcends pages, offering</span> 
+                    <span> a haven where stories breathe, ideas flourish, and minds find timeless refuge.</span>
+                </p>
+            </div>
+            <Form />
+            <div className="test"></div>
+            <div className="test"></div>
+            <div className="test"></div>
             <div className="test"></div>
 
     </div>

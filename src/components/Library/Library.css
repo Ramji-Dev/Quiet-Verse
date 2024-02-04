@@ -1,0 +1,14 @@
+.para-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+@media (min-width: 640px) {
+    .para-con{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

@@ -13,7 +13,7 @@ function Book({image, name, price}) {
     gsap.to('.anime', {
       opacity: 1,
       duration: 1.5,
-      stagger: 0.5,
+      stagger: 0.2,
       scrollTrigger: {
         trigger: '.anime',
         start: 'center 85%',

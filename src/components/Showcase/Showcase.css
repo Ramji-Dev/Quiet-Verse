@@ -17,6 +17,10 @@
     opacity: 0;
 }
 
+.image-con{
+    /* margin-bottom: 10%; */
+}
+
 img{
     width: 80vw;
     border-radius: 3vw;
@@ -101,6 +105,14 @@ cite{
 
     cite{
         font-size: 1.5vw;
+    }
+
+    .book-desc{
+        font-size: 2vw;
+    }
+
+    .title{
+        font-size: 2vw;
     }
 }
 

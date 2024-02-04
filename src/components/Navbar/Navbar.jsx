@@ -47,19 +47,23 @@ function Navbar() {
             <menu ref={menuRef}>
                 <div className="pages">
                     <Link><h3>Shop</h3></Link>
-                    <Link><h3>Elevate</h3></Link>
-                    <Link><h3>Library</h3></Link>
+                    <a href='#elevate'><h3>Elevate</h3></a>
+                    <a href='#library'><h3>Library</h3></a>
                     <Link><h3>Donate</h3></Link>
-                    <Link><h3>Write us</h3></Link>
+                    <a href='#write'><h3>Write us</h3></a>
                     <Link><h3>Sign in</h3></Link>
                 </div>
                 <div className="connect">
-                    <Link><h6 className='social-links'><span className='interact'>Connect with us</span></h6></Link>
-                    <Link><h6 className='social-links'>Linkedin</h6></Link>
-                    <Link><h6 className='social-links'>Twitter</h6></Link>
-                    <Link><h6 className='social-links'>Facebook</h6></Link>
-                    <Link><h6 className='social-links'>Instagram</h6></Link>
-                    <Link><h6 className='social-links'>Youtube</h6></Link>
+                    <a>
+                        <h6 className='social-links'>
+                            <span className='interact'>Connect with us</span>
+                        </h6>
+                    </a>
+                    <a><h6 className='social-links'>Linkedin</h6></a>
+                    <a><h6 className='social-links'>Twitter</h6></a>
+                    <a><h6 className='social-links'>Facebook</h6></a>
+                    <a><h6 className='social-links'>Instagram</h6></a>
+                    <a><h6 className='social-links'>Youtube</h6></a>
                 </div>
             </menu>
         </div>

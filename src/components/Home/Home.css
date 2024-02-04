@@ -5,7 +5,7 @@
 }
 
 .heading{
-    padding: 20% 0 10% 0;
+    padding: 30% 0 10% 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,43 +56,13 @@ hr{
     opacity: 0;
 }
 
-h5{
+.text-mind,
+.text-heart{
     font-family: bold;
     font-size: 2.5vw;
     color: #9A3B3B;
     letter-spacing: 0.3vw;
     padding: 0 1vw;
-}
-
-.heart{
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 5%;
-    margin-bottom: 10%;
-}
-
-.quote{
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    opacity: 0;
-}
-
-.feeling{
-    font-family: bold;
-    color: #9A3B3B;
-    margin-bottom: 10%;
-    letter-spacing: 0.2vw;
-    font-size: 4.5vw;    
-}
-
-.leaf-heart{
-    opacity: 0;
-    margin-bottom: 0;
 }
 
 .book-container{
@@ -106,9 +76,6 @@ h5{
     margin-bottom: 10%;
 }
 
-.product-image{
-    opacity: 1;
-}
 
 .pointer{
     height: 2vw;
@@ -136,6 +103,8 @@ h5{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* margin-bottom: 20%; */
+    margin: 25% 0;
 }
 
 .sayings{
@@ -166,6 +135,24 @@ h5{
     height: 100vh;
 }
 
+.library-p{
+    margin-bottom: 30%;
+}
+
+.about{
+    color: #FFF3E2;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    word-spacing: 0.5vw;
+    line-height: 1.8;
+    padding: 0 5%;
+}
+
+.about>span{
+    font-family: Dlight;
+
+}
+
 @media (min-width: 420px) {
     
 }
@@ -194,40 +181,23 @@ h5{
         left: -13%;
     }
 
-    h5{
-        font-size: 1.2vw;
+    .text-mind,
+    .text-heart{
+        font-size: 1.5vw;
     }
-
-    .feeling{
-        font-size: 3vw;
-    }
-    
-    /* .leaf-heart{
-        min-width: 45vw;
-        max-width: 1.1vw;
-    } */
 
     .sayings{
         font-size: 4vw;
+    }
+
+    .about{
+        min-width: 100%;
+        font-size: 2vw;
     }
 }
 
 
 @media (min-width: 768px) { 
-    
-    .heart{
-        flex-direction: row;
-        
-    }
-
-    .quote{
-        width: 60%;
-    }
-
-    .feeling{
-        font-size: 2.1vw;
-    }
-
     .pointer{
         display:flex;
     }

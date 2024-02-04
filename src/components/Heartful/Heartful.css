@@ -1,0 +1,51 @@
+.heart{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.quote{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    opacity: 0;
+}
+
+.feeling{
+    font-family: bold;
+    color: #9A3B3B;
+    margin-bottom: 10%;
+    letter-spacing: 0.2vw;
+    font-size: 4.5vw;    
+}
+
+.leaf-heart{
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+    .feeling{
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .heart{
+        flex-direction: row;
+        
+    }
+
+    .quote{
+        width: 60%;
+    }
+
+    .feeling{
+        font-size: 2.1vw;
+    }
+}
