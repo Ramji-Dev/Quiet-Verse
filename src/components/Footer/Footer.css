@@ -1,0 +1,22 @@
+.footer-con{
+    margin-bottom: 5%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+.footer-text{
+    color: #9A3B3B;
+    font-family: light;
+    font-weight: 10;
+}
+
+@media (min-width: 640px) {
+    .footer-text{
+        font-size: 1vw;
+    }
+}

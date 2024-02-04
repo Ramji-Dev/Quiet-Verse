@@ -153,6 +153,16 @@ hr{
 
 }
 
+.quiet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo{
+    width: 30vw;
+}
+
 @media (min-width: 420px) {
     
 }
@@ -194,6 +204,10 @@ hr{
         min-width: 100%;
         font-size: 2vw;
     }
+
+    .footer-logo{
+        width: 20vw;
+    }   
 }
 
 

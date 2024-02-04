@@ -4,10 +4,11 @@ import gsap, { Expo} from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react'
 import Book from '../Book';
-import Showcase from '../Showcase/Showcase';
-import Heartful from '../Heartful/Heartful';
-import Library from '../Library/Library';
-import Form from '../Form/Form';
+import Showcase from '../Showcase';
+import Heartful from '../Heartful';
+import Library from '../Library';
+import Form from '../Form';
+import Socials from '../Socials';
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
@@ -95,8 +96,8 @@ function Home() {
         tl.current = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container',
-                start: 'center-=5% 70%',
-                end: 'center-=5% -50%',
+                start: 'center+=6% 60%',
+                end: 'center+=6% -50%',
                 // markers: 1,
                 scrub: 0.1
             }
@@ -107,8 +108,8 @@ function Home() {
         tl.current = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container',
-                start: 'center+=10% 30%',
-                end: 'center+=10% 10%',
+                start: 'center+=8% -100%',
+                end: 'center+=8% -200%',
                 // markers: {
                 //     startColor: '#adff2d',
                 //     endColor: '#242424'
@@ -181,16 +182,20 @@ function Home() {
 
             <Library />
             <div className="library-p">
-                <p className='about'>
-                    <span>This is where we curate a sanctuary of words. Our library transcends pages, offering</span> 
-                    <span> a haven where stories breathe, ideas flourish, and minds find timeless refuge.</span>
-                </p>
+            <p className='about'>
+            <span>This is where we curate a sanctuary of words. Our library transcends pages, offering</span> 
+            <span> a haven where stories breathe, ideas flourish, and minds find timeless refuge.</span>
+            </p>
             </div>
             <Form />
-            <div className="test"></div>
-            <div className="test"></div>
-            <div className="test"></div>
-            <div className="test"></div>
+            
+        <Socials />
+
+            <div className="quiet">
+                <svg className='footer-logo' viewBox="0 0 191 191" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M96 4.5L95.5 4M113 22.5L95.5 4M113 22.5L125 10.5L144.5 30L132.5 42M113 22.5L36 99.5M95.5 4L4 96.5L21.5 114L36 99.5M55.5 119L36 99.5M55.5 119L41.5 133L58.5 150M55.5 119L132.5 42M58.5 150L46 162.5L64 180.5L77.5 167M58.5 150L136.5 72M132.5 42L149.5 59L136.5 72M154.5 90L136.5 72M154.5 90L167.5 77L187 96.5L97 186.5L77.5 167M154.5 90L77.5 167" stroke="#9A3B3B" stroke-width="2"/>
+                </svg>
+            </div>
 
     </div>
   )

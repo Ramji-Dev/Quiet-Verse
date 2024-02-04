@@ -30,7 +30,7 @@ nav{
     display: none;
 }
 
-svg{
+.nav-svg{
     width: 8vw;
 }
 
@@ -163,7 +163,7 @@ h6{
         backdrop-filter: blur(2px);
     }
     
-    svg{
+    .nav-svg{
         width: 4vw;
     }
     

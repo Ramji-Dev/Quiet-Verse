@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Form.css'
 
 function Form() {
 
+    const [userDetails, setUserDetails] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        comment: ''
+    });
+
     const handleSubmit = (e) => {
-        console.log('e');
+        e.preventDefault();
+        console.log(userDetails);
+    }
+
+    const handleChange = (e) => {
+        setUserDetails({...userDetails, [e.target.name]: e.target.value})
     }
     
   return (
@@ -16,15 +29,46 @@ function Form() {
             </div>
             <div className="form-dets">
                 <div className="name">
-                    <input type="text" placeholder='First Name' className='first-name'/>
-                    <input type="text" placeholder='Last Name' className='last-name'/>
+                    <input 
+                    type="text" 
+                    name='firstName' 
+                    onChange={handleChange} 
+                    value={userDetails.name} 
+                    placeholder='First Name' 
+                    required 
+                    className='first-name'/>
+                    <input 
+                    type="text" 
+                    name='lastName' 
+                    onChange={handleChange} 
+                    value={userDetails.lastName} 
+                    placeholder='Last Name' 
+                    className='last-name'/>
                 </div>
-                <input type="text" placeholder='Email Address' className="email" />
-                <input type="tel" placeholder='Phone Number' className="phone" />
+                <input 
+                type="text" 
+                name='email' 
+                onChange={handleChange} 
+                value={userDetails.email} 
+                placeholder='Email Address' 
+                required 
+                className="email" />
+                <input 
+                type="tel" 
+                name='phone' 
+                onChange={handleChange} 
+                value={userDetails.phone} 
+                placeholder='Phone Number'
+                required 
+                className="phone" />
             </div>
             <div className="submit">
-                <textarea placeholder='Quietly connect. Share thoughts and questions gracefully.'></textarea>
-                <button type='submit'>
+                <textarea 
+                name='comment' 
+                onChange={handleChange} 
+                value={userDetails.comment} 
+                placeholder='Quietly connect. Share thoughts and questions gracefully.'></textarea>
+                <button type='submit' className='sub-button'>
                     <i className="ri-arrow-right-line"></i>
                 </button>
             </div>
