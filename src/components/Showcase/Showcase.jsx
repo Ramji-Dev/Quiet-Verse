@@ -5,7 +5,7 @@ function Showcase() {
     <div>
         <div className="showcase">
                 <div className="image-con">
-                    <img src="./images/orphaned.jpg" alt="orphaned" className='orphaned'/>
+                    <img src="./images/orphaned.webp" alt="orphaned" className='orphaned'/>
                 </div>
                 <div className="image-context">
                     <div className='description' >

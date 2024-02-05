@@ -1,12 +1,32 @@
+.lib-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.library-head{
+    color: #9A3B3B;
+    margin-bottom: 5%;
+    font-family: Dregular;
+    font-size: 8vw;
+    text-transform: uppercase;
+}
+
 .para-con{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 10%;
 }
 
 @media (min-width: 640px) {
+
+    .library-head{
+        font-size: 5vw;
+    }
+
     .para-con{
         flex-direction: row;
         flex-wrap: wrap;

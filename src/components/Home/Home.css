@@ -146,6 +146,7 @@ hr{
     word-spacing: 0.5vw;
     line-height: 1.8;
     padding: 0 5%;
+    background-color: transparent;
 }
 
 .about>span{
@@ -157,10 +158,13 @@ hr{
     display: flex;
     align-items: center;
     justify-content: center;
+    scale: 1.2;
+    opacity: 0;
 }
 
 .footer-logo{
     width: 30vw;
+    margin-bottom: 3%;
 }
 
 @media (min-width: 420px) {

@@ -28,6 +28,7 @@
 .lib-img{
     margin-bottom: 0;
     scale: 1.5;
+    transform: translateY(10%);
     /* border: 5px black solid; */
 }
 
@@ -45,6 +46,7 @@
         width: 40vw;
         margin: 0;
         margin-bottom: 1vw;
+        margin-right: 1vw;
     }
     .capsule{
         padding: 1vw 2vw;

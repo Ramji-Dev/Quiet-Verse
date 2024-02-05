@@ -32,7 +32,7 @@ function Heartful() {
                     <p className='feeling'>Elevate minds, inspire hearts. Our books spark profound insights, fostering growth, resilience, and a lasting impact on readers.</p>
                     <cite className='wise'>~ A Wise Man</cite>
                 </div>
-                <img src="./images/heart1.png" alt="heart" className='leaf-heart'/>
+                <img src="./images/heart.webp" alt="heart" className='leaf-heart'/>
             </div>
     </div>
   )

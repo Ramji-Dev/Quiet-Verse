@@ -14,8 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Home() {
 
     const allRef = useRef(null);
-    const tl = useRef(null);
-    const tl1 = useRef(null);
+    const tl = useRef([null],[null],[null]);
+    // const tl1 = useRef(null);
     
     useGSAP(() => {
         gsap.to('h1', {
@@ -66,58 +66,77 @@ function Home() {
             }
         })
 
-        gsap.to('.saying-one', {
-            x: '10%',
-            duration:1,
-            ease: Expo,
-            opacity: 1,
+        tl.current[0] = gsap.timeline({
             scrollTrigger: {
                 scroller: 'body',
                 trigger: '.saying-one',
                 start: 'center 70%',
-                // markers: 1  
+                end: 'center 60%',
+                // markers: 1,
             }
         })
-        
-        gsap.to('.saying-two', {
-            x: '-15%',
-            duration:1,
+        .to('.saying-one', {
+            x: '10%',
+            duration: 1,
             ease: Expo,
-            opacity: 1,
-            scrollTrigger: {
-                scroller: 'body',
-                trigger: '.saying-two',
-                start: 'center 70%',
-                // markers: 1  
-            }
-        })
-        
+            opacity: 1
+        },'transition')
+        .to('.saying-two', {
+            x: '-15%',
+            duration: 1,
+            ease: Expo,
+            opacity: 1
+        },'transition')
+
         // tl.current = gsap.timeline()
-        tl.current = gsap.timeline({
+        tl.current[1] = gsap.timeline({
             scrollTrigger: {
-                trigger: '.home-container',
+                trigger: '.home-container, .sayings, .library-head',
                 start: 'center+=6% 60%',
-                end: 'center+=6% -50%',
+                end: 'center+=6% -20%',
                 // markers: 1,
                 scrub: 0.1
             }
         }).to('.home-container', {
             backgroundColor: '#611D1B',
-        })
+        },'transition').to('.sayings, .library-head', {
+            color: '#FFF3E2'
+        },'transition')
 
-        tl.current = gsap.timeline({
+        tl.current[2] = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container',
-                start: 'center+=8% -100%',
-                end: 'center+=8% -200%',
+                start: 'center+=9% -100%',
+                end: 'center+=9% -200%',
+                // markers: {
+                //         startColor: '#adff2d',
+                //         endColor: '#242424'
+                //     },
+                    scrub: 0.1
+                }
+            })
+            .to('.home-container', {
+                backgroundColor: '#FFF3E2'
+            },'transition').to('.about', {
+            color: '#9A3B3B',
+
+            },'transition')
+
+        gsap.to('.quiet', {
+            scale: 1,
+            opacity: 1,
+            delay: 4,
+            scrollTrigger: {
+                trigger: '.quiet',
+                start: 'bottom-=3% 100%',
+                end: 'bottom-=3% 80%',
                 // markers: {
                 //     startColor: '#adff2d',
-                //     endColor: '#242424'
+                //     endColor: '#242424',
+                //     fontSize: '2vw'
                 // },
                 scrub: 0.1
             }
-        }).to('.home-container', {
-            backgroundColor: '#FFF3E2'
         })
 
     }, {scope: allRef.current})
@@ -193,7 +212,7 @@ function Home() {
 
             <div className="quiet">
                 <svg className='footer-logo' viewBox="0 0 191 191" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M96 4.5L95.5 4M113 22.5L95.5 4M113 22.5L125 10.5L144.5 30L132.5 42M113 22.5L36 99.5M95.5 4L4 96.5L21.5 114L36 99.5M55.5 119L36 99.5M55.5 119L41.5 133L58.5 150M55.5 119L132.5 42M58.5 150L46 162.5L64 180.5L77.5 167M58.5 150L136.5 72M132.5 42L149.5 59L136.5 72M154.5 90L136.5 72M154.5 90L167.5 77L187 96.5L97 186.5L77.5 167M154.5 90L77.5 167" stroke="#9A3B3B" stroke-width="2"/>
+                <path d="M96 4.5L95.5 4M113 22.5L95.5 4M113 22.5L125 10.5L144.5 30L132.5 42M113 22.5L36 99.5M95.5 4L4 96.5L21.5 114L36 99.5M55.5 119L36 99.5M55.5 119L41.5 133L58.5 150M55.5 119L132.5 42M58.5 150L46 162.5L64 180.5L77.5 167M58.5 150L136.5 72M132.5 42L149.5 59L136.5 72M154.5 90L136.5 72M154.5 90L167.5 77L187 96.5L97 186.5L77.5 167M154.5 90L77.5 167" stroke="#9A3B3B" strokeWidth="2"/>
                 </svg>
             </div>
 
