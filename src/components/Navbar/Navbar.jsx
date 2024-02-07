@@ -47,8 +47,8 @@ function Navbar() {
             <menu ref={menuRef}>
                 <div className="pages">
                     <Link to={'shop'}><h3>Shop</h3></Link>
-                    <a href='#elevate'><h3>Elevate</h3></a>
-                    <a href='#library'><h3>Library</h3></a>
+                    <a href='/#library'><h3>Elevate</h3></a>
+                    <a href='/#library'><h3>Library</h3></a>
                     <Link><h3>Donate</h3></Link>
                     <a href='#write'><h3>Write us</h3></a>
                     <Link><h3>Sign in</h3></Link>
@@ -78,7 +78,7 @@ function Navbar() {
 
                     <div className="links">
                         <NavLink to={'shop'}><h4 ref={navLinkRef0}>Shop</h4></NavLink>
-                        <a href='#library'><h4 ref={navLinkRef1}>Library</h4></a> 
+                        <a href='/#library'><h4 ref={navLinkRef1}>Library</h4></a> 
                         <NavLink ><h4 ref={navLinkRef2}>Donate</h4></NavLink>
                     </div>
 
