@@ -1,0 +1,235 @@
+@font-face {
+    font-family: bold;
+    src: url(../fonts/Almarena-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: regular;
+    src: url(../fonts/Almarena-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: light;
+    src: url(../fonts/Almarena-Light.ttf);
+  }
+  
+  @font-face {
+    font-family: Dbold;
+    src: url(../fonts/Almarena-Display-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: Dregular;
+    src: url(../fonts/Almarena-Display-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: Dlight;
+    src: url(../fonts/Almarena-Display-Light.ttf);
+  }
+
+.bookpage-con{
+    margin-top: 15%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-book,
+.quantity,
+.book-price,
+.shipping-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-book-name,
+.buy-book-title,
+.buy-book-price{
+    text-transform: uppercase;
+    color: #9A3B3B;
+    margin-bottom: 10%;
+}
+
+.buy-book-price{
+    margin-bottom: none;
+}
+
+.buy-book-name{
+    font-size: 6vw;
+    font-family: Dbold;
+    font-weight: 500;
+}
+
+.buy-book-title{
+    font-size: 4vw;
+    font-family: Dlight;
+    letter-spacing: 0.3vw;
+    color: #9a3b3b86;
+}
+
+.price-quantity-con{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buy-book-price{
+    font-size: 5vw;
+    width: fit-content;
+    font-family: Dlight;
+    font-weight: 500;
+    border-bottom: 1px solid #9A3B3B;
+    margin-bottom: 0;
+}
+
+.quantity,
+.book-price{
+    flex-direction: column;
+    align-items: start;
+}
+
+.price-quantity-con,
+.shipping,
+.buttons{
+    margin-bottom: 10%;
+}
+
+.buy-book-quantity,
+.buy-book-price-text{
+    font-size: 4vw;
+    font-family: light;
+    color: #9A3B3B;
+    font-weight: 500;
+    margin-bottom: 2vw;
+}
+
+.change-quantity{
+    display: flex;
+    gap: 4.5vw;
+    color: #9A3B3B;
+}
+
+.change-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.decrease,
+.real-quantity,
+.increase,
+.shipping-details{
+    font-size: 4vw;
+    font-family: regular;
+    font-weight: 500;
+    color: #9A3B3B;
+}
+
+.shipping-span{
+    font-family: light;
+    font-weight: 500;
+    margin-right: 1vw;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add,
+.buy{
+    color: #9A3B3B;
+    font-size: 4vw;
+    font-family: Dlight;
+    background-color: transparent;
+    border: 1px solid #9A3B3B;
+    padding: 4vw 10vw;
+    border-radius: 50vw;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+    .buy-book-image{
+        width: 50vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .bookpage-con{
+        align-items: center;
+        flex-direction: row;
+        padding: 0 2%;
+        margin-top: 0;
+    }
+
+    .buy-book-image{
+        width: 50vw;
+    }
+
+    .buy-book-name{
+        font-size: 3vw;
+    }
+
+    .buy-book-title{
+        font-size: 2vw;
+    }
+
+    .price-quantity-con{
+        flex-direction: column;
+    }
+
+    .buy-book-price{
+        margin-bottom: 3%;
+    }
+
+    .buy-book-name,
+    .buy-book-title{
+        margin-bottom: 3%;
+    }
+
+    .buy-book-price-text,
+    .buy-book-quantity{
+        font-size: 1vw;
+        margin-bottom: 1%;
+    }
+
+
+    .buy-book-price,
+    .decrease,
+    .increase,
+    .real-quantity{
+        font-size: 1.5vw;
+        margin-bottom: 3%;
+    }
+
+    .buy-book-price{
+        font-size: 2.5vw;
+    }
+
+    .change-quantity{
+        gap: 1.5vw;
+    }
+
+    .real-quantity{
+        margin-bottom: 0;
+    }
+
+    .shipping-details{
+        font-size: 1.5vw;
+        justify-content: start;
+    }
+
+    .buttons{
+        justify-content: space-evenly;
+        margin-bottom: 0;
+    }
+
+    .add,
+    .buy{
+        font-size: 1.5vw;
+        padding: 1vw 4vw;
+    }
+}

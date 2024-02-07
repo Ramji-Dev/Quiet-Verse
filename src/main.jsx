@@ -5,8 +5,11 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import './index.css'
 import 'remixicon/fonts/remixicon.css'
 import About from './components/About.jsx'
-import Home from './components/Home/Home.jsx'
+import Home from './components/Home'
 import Error from './components/Error.jsx'
+import Shop from './Pages/Shop/index.js'
+import BookPage from './Pages/BookPage/index.js'
+import SharedLayout from './Pages/SharedLayout.jsx'
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +17,10 @@ const route = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='*' element={<Error />} />
+      <Route path='shop' element={<SharedLayout />}>
+          <Route index element={<Shop />} />
+          <Route path=':book' element={<BookPage />} />
+      </Route>
     </Route>
   )
 )

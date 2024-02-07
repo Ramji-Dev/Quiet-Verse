@@ -46,7 +46,7 @@ function Navbar() {
         <div className="menu-container">
             <menu ref={menuRef}>
                 <div className="pages">
-                    <Link><h3>Shop</h3></Link>
+                    <Link to={'shop'}><h3>Shop</h3></Link>
                     <a href='#elevate'><h3>Elevate</h3></a>
                     <a href='#library'><h3>Library</h3></a>
                     <Link><h3>Donate</h3></Link>
@@ -71,14 +71,14 @@ function Navbar() {
         <nav>
 
             <div className="logo">
-                <a href='#'><svg className='nav-svg' viewBox="0 0 191 191" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M96 4.5L95.5 4M113 22.5L95.5 4M113 22.5L125 10.5L144.5 30L132.5 42M113 22.5L36 99.5M95.5 4L4 96.5L21.5 114L36 99.5M55.5 119L36 99.5M55.5 119L41.5 133L58.5 150M55.5 119L132.5 42M58.5 150L46 162.5L64 180.5L77.5 167M58.5 150L136.5 72M132.5 42L149.5 59L136.5 72M154.5 90L136.5 72M154.5 90L167.5 77L187 96.5L97 186.5L77.5 167M154.5 90L77.5 167" stroke="#9A3B3B" strokeWidth="5"/></svg></a>
+                <Link to={'/'}><svg className='nav-svg' viewBox="0 0 191 191" fill="none" xmlns="http://www.w3.org/2000/svg"><path className='new-svg' d="M96 4.5L95.5 4M113 22.5L95.5 4M113 22.5L125 10.5L144.5 30L132.5 42M113 22.5L36 99.5M95.5 4L4 96.5L21.5 114L36 99.5M55.5 119L36 99.5M55.5 119L41.5 133L58.5 150M55.5 119L132.5 42M58.5 150L46 162.5L64 180.5L77.5 167M58.5 150L136.5 72M132.5 42L149.5 59L136.5 72M154.5 90L136.5 72M154.5 90L167.5 77L187 96.5L97 186.5L77.5 167M154.5 90L77.5 167" stroke="#9A3B3B" strokeWidth="5"/></svg></Link>
             </div>
 
             <div className="links-container">
 
                     <div className="links">
-                        <NavLink ><h4 ref={navLinkRef0}>Shop</h4></NavLink>
-                        <NavLink ><h4 ref={navLinkRef1}>Library</h4></NavLink> 
+                        <NavLink to={'shop'}><h4 ref={navLinkRef0}>Shop</h4></NavLink>
+                        <a href='#library'><h4 ref={navLinkRef1}>Library</h4></a> 
                         <NavLink ><h4 ref={navLinkRef2}>Donate</h4></NavLink>
                     </div>
 

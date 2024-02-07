@@ -99,8 +99,8 @@ function Home() {
             }
         }).to('.home-container', {
             backgroundColor: '#611D1B',
-        },'transition').to('.sayings, .library-head', {
-            color: '#FFF3E2'
+        },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
+            color: '#FFF3E2',
         },'transition')
 
         tl.current[2] = gsap.timeline({
@@ -117,9 +117,9 @@ function Home() {
             })
             .to('.home-container', {
                 backgroundColor: '#FFF3E2'
-            },'transition').to('.about', {
-            color: '#9A3B3B',
-
+            },'transition')
+            .to('.about, h4, i', {
+                color: '#9A3B3B',
             },'transition')
 
         gsap.to('.quiet', {
