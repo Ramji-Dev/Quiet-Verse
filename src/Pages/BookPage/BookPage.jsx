@@ -1,11 +1,25 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {books} from '../../bookData'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { useDispatch, useSelector } from 'react-redux'
+import { increaseQuantity, decreaseQuantity } from '../../features/bookQuantitySlice'
 import './BookPage.css'
 
 function BookPage() {
+    
+    const quantity = useSelector(state => state.quantity);
+    const dispatch = useDispatch();
+
+    const handleClick = (e) => {
+      if (e.target.id === 'increase') {
+        dispatch(increaseQuantity(quantity));
+      } else if (e.target.id === 'decrease') {
+        dispatch(decreaseQuantity(quantity));
+      }
+    }
+
     const { book } = useParams();
     
     const bookDetails = books.find((item) => item.id === book)
@@ -13,7 +27,6 @@ function BookPage() {
     const {name, title, price, image} = bookDetails
 
     const bookPageRef = useRef(null);
-    const buttonRef = useRef(null);
 
     const { contextSafe } = useGSAP({scope: bookPageRef.current})
 
@@ -60,11 +73,11 @@ function BookPage() {
             <h5 className='buy-book-quantity'>Quantity :</h5>
             <div className="change-quantity">
               <button className='change-btn'>
-                <h5 className='decrease'>-</h5>
+                <h5 className='decrease' id='decrease' onClick={handleClick}>-</h5>
               </button>
-              <h5 className='real-quantity'>453</h5>
+              <h5 className='real-quantity'>{quantity}</h5>
               <button className='change-btn'>
-                <h5 className='increase'>+</h5>
+                <h5 className='increase' id='increase' onClick={handleClick}>+</h5>
               </button>
             </div>
           </div>
@@ -77,14 +90,13 @@ function BookPage() {
         
 
         <div className="buttons">
-          <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-            <svg className='ball' width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='ball' width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="100" cy="100" r="100" fill="#EABA8D"/>
             <circle cx="100" cy="100" r="73.4375" fill="#EAD08D"/>
             <circle cx="100" cy="100" r="48.4375" fill="#EAE68D"/>
             <circle cx="100" cy="100" r="26.5625" fill="#B6EA8D"/>
           </svg>
-            Add to cart</button>
+          <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>Add to cart</button>
           <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>Buy now</button>
         </div>
       </div>

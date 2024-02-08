@@ -3,6 +3,8 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Lenis from '@studio-freight/lenis'
 import Footer from './components/Footer'
+import { Provider } from 'react-redux'
+import { store } from './apps/store'
 
 
 function App() {
@@ -21,11 +23,11 @@ function App() {
     requestAnimationFrame(raf)
 
   return (
-    <>
+    <Provider store={store}>
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   )
 }
 

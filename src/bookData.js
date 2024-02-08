@@ -4,42 +4,55 @@ export const books = [
           "image": "./images/books/book_1.webp",
           "name": "Seeing what's invisible",
           "price": 58,
-          "title": "Four stratigic thinking models to empower your people"
+          "title": "Four stratigic thinking models to empower your people",
+          "bgc": "#2563ae",
+          "color": "#93e6ea"
         },
         {
           "id": "9cQU3-v3n9-FQhf-9X8A-qolVMp5",
           "image": "./images/books/book_2.webp",
           "name": "The elder-led Church",
           "price": 34,
-          "title": "How an edlership team shepherd a healthy floack"
+          "title": "How an edlership team shepherd a healthy floack",
+          "bgc": "#ebf3f5",
+          "color": "#d3502d"
         },
         {
           "id": "6KlLC-YiXI-DNqq-b2u2-rbvXhHG",
           "image": "./images/books/book_3.webp",
           "name": "Flex",
           "price": 43,
-          "title": "Unapologetically Black Unapologetically Ambitious Unapologetically You"
+          "title": "Unapologetically Black Unapologetically Ambitious Unapologetically You",
+          "bgc": "#25211f",
+          "color": "#E25C1F"
         },
         {
           "id": "lo0KF-TyAs-oSjH-vydw-0LPHKYc",
           "image": "./images/books/book_4.webp",
           "name": "Confessions of a top earner",
           "price": 72,
-          "title": "Top earners share secrets to financial success."
+          "title": "Top earners share secrets to financial success.",
+          "bgc": "#cc4f1f",
+          "color": "#dcddd8"
         },
         {
           "id": "j8AiZ-Chlt-8KuS-D3fA-T9pXAc2",
           "image": "./images/books/book_5.webp",
           "name": "Leading sales development",
           "price": 61,
-          "title": "Strategic insights for sales development leadership."
+          "title": "Strategic insights for sales development leadership.",
+          "bgc" : "#0d2038",
+          "color": "#de9b1c"
         },
         {
           "id": "btXBS-9uPa-Ps94-1LSm-QHeuZYJ",
           "image": "./images/books/book_6.webp",
           "name": "The 13th circle",
           "price": 30,
-          "title": "Mysterious, intriguing shadows captivate within enigmatic secrets."
+          "title": "Mysterious, intriguing shadows captivate within enigmatic secrets.",
+          "bgc": "#272729",
+          "color": "#ba2829"
+          // "color": "#272729"
         },
         {
           "id": "MZQ47-6mRx-tbTs-Qz7k-v06cPDA",

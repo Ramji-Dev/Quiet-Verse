@@ -228,10 +228,10 @@
         padding: 1vw 4vw;
         position: relative;
         overflow: hidden;
+        mix-blend-mode: difference;
     }
 
     .ball{
-        mix-blend-mode: difference;
         display: flex;
         position: fixed;
         pointer-events: none;

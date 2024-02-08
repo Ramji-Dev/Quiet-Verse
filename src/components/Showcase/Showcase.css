@@ -17,18 +17,14 @@
     opacity: 0;
 }
 
-.image-con{
-    /* margin-bottom: 10%; */
-}
-
 img{
     width: 80vw;
     border-radius: 3vw;
-    margin-bottom: 5%;
 }
 
 .orphaned{
     opacity: 0;
+    margin-bottom: 5%;
 }
 
 h2{

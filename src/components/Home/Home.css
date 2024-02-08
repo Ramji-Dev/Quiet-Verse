@@ -76,6 +76,35 @@ hr{
     margin-bottom: 10%;
 }
 
+.product{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2%;
+}
+
+.anime{
+    opacity: 0;
+}
+
+.text{
+    text-align: center;
+    color: #9A3B3B;
+}
+
+.book-dets-price-name{
+    font-family: light;
+    font-weight: 500;
+    font-size: 2.5vw;
+}
+
+.anime{
+    pointer-events: none;
+}
 
 .pointer{
     height: 2vw;
@@ -96,7 +125,6 @@ hr{
 .purchase{
     font-size: 1vw;
     font-family: light;
-    color: #FFF3E2;
 }
 
 .thought{
@@ -168,11 +196,15 @@ hr{
 }
 
 @media (min-width: 420px) {
-    
+    .book-dets-price-name{
+        font-size: 3.5vw;
+    }
 }
 
 @media (min-width: 480px) {
-    
+    .product{
+        width: 40%;
+    }
 }
 
 @media (min-width: 640px) { 
@@ -200,6 +232,10 @@ hr{
         font-size: 1.5vw;
     }
 
+    .book-dets-price-name{
+        font-size: 2vw;
+    }
+
     .sayings{
         font-size: 4vw;
     }
@@ -222,11 +258,15 @@ hr{
 }
 
 @media (min-width: 860px) {
-    
+    .book-dets-price-name{
+        font-size: 1.8vw;
+    }
 }
 
 @media (min-width: 992px) {
-
+    .book-dets-price-name{
+        font-size: 1.3vw;
+    }
 }
 
 @media (min-width: 1024px) { 

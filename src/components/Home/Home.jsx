@@ -3,19 +3,20 @@ import './Home.css'
 import gsap, { Expo} from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react'
-import Book from '../Book';
 import Showcase from '../Showcase';
 import Heartful from '../Heartful';
 import Library from '../Library';
 import Form from '../Form';
 import Socials from '../Socials';
+import { books } from '../../bookData';
+import { Link } from 'react-router-dom'
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
 
     const allRef = useRef(null);
     const tl = useRef([null],[null],[null]);
-    // const tl1 = useRef(null);
     
     useGSAP(() => {
         gsap.to('h1', {
@@ -65,6 +66,19 @@ function Home() {
                 // markers: 1,      
             }
         })
+
+        gsap.to('.anime', {
+            opacity: 1,
+            duration: 1.5,
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: '.anime',
+              start: 'center 85%',
+              end: 'center 70%',
+              // markers: 1,
+              // toggleActions: "play none none resume"
+            }
+          })
 
         tl.current[0] = gsap.timeline({
             scrollTrigger: {
@@ -141,14 +155,16 @@ function Home() {
 
     }, {scope: allRef.current})
 
-    const cursorRef = useRef(null);
 
     const { contextSafe } = useGSAP({scope: allRef})
 
-    const handleMouseMove = contextSafe((e) => {
+    const handleMouseMove = contextSafe((e, bgc, color) => {
+        
         gsap.to('.pointer', {
             top: e.pageY,
             left: e.pageX,
+            backgroundColor: bgc,
+            color: color,
             opacity: 1,
             scale: 1
         })
@@ -162,7 +178,11 @@ function Home() {
             scale: 0
         })
     })  
+
     
+    const limit = 6;
+
+    const limitedBookData = books.slice(0, limit);
     
     return (
         <div className="home-container" ref={allRef} >
@@ -183,13 +203,26 @@ function Home() {
             <Heartful />
 
             <div className="pointer"><h6 className='purchase'>PURCHASE</h6></div>
-            <div className="book-container" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} ref={cursorRef}> 
-                <Book image={'./images/invisible.webp'} name={'Seeing what’s invisible'} price={15}/>
-                <Book image={'./images/elder.webp'} name={'The Elder-Led Church'} price={65}/>
-                <Book image={'./images/flex.webp'} name={'flex'} price={45}/>
-                <Book image={'./images/earner.webp'} name={'CONFESSION'} price={95}/>
-                <Book image={'./images/sales.webp'} name={'Leading Sales Development'} price={49}/>
-                <Book image={'./images/circle.webp'} name={'The Thirteenth Circle'} price={25}/>
+            <div className="book-container" >                 
+                {
+                     limitedBookData.map(({id, name, image, price, bgc, color}) => {
+                        return (
+                            <div key={id} className='product' onMouseMove={(e) => handleMouseMove(e, bgc, color)} onMouseLeave={handleMouseLeave} >
+                                <Link to={`shop/${id}`}>
+                                    <div className="anime">
+                                        <div className="image">
+                                            <img src={image} alt={name} className='product-image'/>
+                                        </div>
+                                        <div className="text">
+                                            <h6 className='book-dets-price-name'>{name} • ${price}</h6>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        )
+                     })
+                }
+                
             </div>
 
             <div className="thought" >
