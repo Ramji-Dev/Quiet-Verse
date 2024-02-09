@@ -87,8 +87,6 @@ function BookPage() {
           <h5 className='shipping-details'><span className='shipping-span'>Quietly ships within </span> 3-4 business days</h5>
         </div>
 
-        
-
         <div className="buttons">
         <svg className='ball' width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="100" cy="100" r="100" fill="#EABA8D"/>

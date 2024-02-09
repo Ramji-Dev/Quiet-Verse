@@ -48,6 +48,22 @@ nav{
     backdrop-filter: blur(2px);
 }
 
+.cart-con{
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+
+.cart-dets{
+    height: 1vw;
+    width: 1vw;
+    border-radius: 100vw;
+    position: absolute;
+    top: -10%;
+    background-color: #ff6816;
+    opacity: 1;
+}
+
 .cart,
 .close,
 .menu-show{
@@ -171,6 +187,11 @@ h3{
         width: 6vw;
         padding: 0.5vw 1vw;
     }
+
+    .cart-dets{
+        height: 0.4vw;
+        width: 0.4vw;
+    }
     
     .cart,
     .close,
@@ -217,6 +238,13 @@ h3{
 
 @media (min-width: 768px) { 
 
+}
+
+@media (min-width: 860px) {
+    .cart-dets{
+        height: 0.3vw;
+        width: 0.3vw;
+    }
 }
 
 @media (min-width: 1024px) { 

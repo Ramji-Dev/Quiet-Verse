@@ -7,9 +7,10 @@ import 'remixicon/fonts/remixicon.css'
 import About from './components/About.jsx'
 import Home from './components/Home'
 import Error from './components/Error.jsx'
-import Shop from './Pages/Shop/index.js'
-import BookPage from './Pages/BookPage/index.js'
+import Shop from './Pages/Shop'
+import BookPage from './Pages/BookPage'
 import SharedLayout from './Pages/SharedLayout.jsx'
+import Cart from './Pages/Cart'
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const route = createBrowserRouter(
           <Route index element={<Shop />} />
           <Route path=':book' element={<BookPage />} />
       </Route>
+      <Route path='cart' element={<Cart />} />
     </Route>
   )
 )

@@ -85,7 +85,13 @@ function Navbar() {
                     <div className="icons">
                         <i className="ri-menu-fold-line menu-show" onClick={handleClick} ref={toggleRef}></i>
                         <i className="ri-close-fill close" onClick={handleClose} ref={closeRef}></i>
-                        <NavLink><i className="ri-shopping-cart-line cart" ref={cartRef}></i></NavLink>
+                        <Link to={'cart'}>
+                            <div className="cart-con">
+                                <div className="cart-dets">
+                                </div>
+                                <i className="ri-shopping-cart-line cart" ref={cartRef}></i>
+                            </div>
+                        </Link>
                     </div>
             </div>
 
