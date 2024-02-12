@@ -1,16 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {books} from '../../bookData'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useDispatch, useSelector } from 'react-redux'
-import { increaseQuantity, decreaseQuantity } from '../../features/bookQuantitySlice'
+import { increaseQuantity, decreaseQuantity } from '../../features/bookQuantity/bookQuantitySlice'
 import './BookPage.css'
+import { addBookToCart } from '../../features/addToCart/addToCartSlice'
 
 function BookPage() {
     
-    const quantity = useSelector(state => state.quantity);
+    const quantity = useSelector(state => state.bookQuantity.quantity);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+      window.scrollTo(0,0)
+    }, [])
 
     const handleClick = (e) => {
       if (e.target.id === 'increase') {
@@ -20,11 +25,15 @@ function BookPage() {
       }
     }
 
+    const handleAddToCartClick = () => {
+      dispatch(addBookToCart(id));
+    }
+
     const { book } = useParams();
     
     const bookDetails = books.find((item) => item.id === book)
     
-    const {name, title, price, image} = bookDetails
+    const {id, name, title, price, image} = bookDetails
 
     const bookPageRef = useRef(null);
 
@@ -94,7 +103,7 @@ function BookPage() {
             <circle cx="100" cy="100" r="48.4375" fill="#EAE68D"/>
             <circle cx="100" cy="100" r="26.5625" fill="#B6EA8D"/>
           </svg>
-          <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>Add to cart</button>
+          <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} onClick={() => handleAddToCartClick(id)}>Add to cart</button>
           <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>Buy now</button>
         </div>
       </div>

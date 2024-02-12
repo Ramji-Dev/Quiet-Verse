@@ -31,6 +31,7 @@
     font-size: 3.5vw;
     font-weight: 500;
     color: #9A3B3B;
+    text-transform: capitalize;
     text-align: center;
 }
 

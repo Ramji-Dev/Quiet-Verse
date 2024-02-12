@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { Link, NavLink } from "react-router-dom"
 import './Navbar.css'
 import gsap, { Expo } from 'gsap'
+import { useSelector } from 'react-redux'
 
 function Navbar() {
 
@@ -12,6 +13,8 @@ function Navbar() {
     const navLinkRef1 = useRef(null);
     const navLinkRef2 = useRef(null);
     const cartRef = useRef(null)
+
+    const isCartEmpty = useSelector(state => state.addToCart.isCartEmpty);
 
     const handleClick = () => {
             gsap.to(menuRef.current, {
@@ -87,8 +90,7 @@ function Navbar() {
                         <i className="ri-close-fill close" onClick={handleClose} ref={closeRef}></i>
                         <Link to={'cart'}>
                             <div className="cart-con">
-                                <div className="cart-dets">
-                                </div>
+                                <div className="cart-dets" style={isCartEmpty ? {opacity: 0} : {opacity: 1}}></div>
                                 <i className="ri-shopping-cart-line cart" ref={cartRef}></i>
                             </div>
                         </Link>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { books } from '../../bookData'
 import gsap from 'gsap'
 import {useGSAP} from '@gsap/react'
@@ -6,6 +6,11 @@ import './Shop.css'
 import { Link } from 'react-router-dom'
 
 function Shop() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+    
     let shopRef = useRef(null);
 
     useGSAP(() => {
@@ -16,8 +21,9 @@ function Shop() {
     }, {scope: shopRef.current})
 
     
+    
   return (
-    <div className='shop-con' ref={shopRef}>
+    <div className='shop-con' ref={shopRef} >
         {
             books.map(({id, name, image, price}) => {
                 return (

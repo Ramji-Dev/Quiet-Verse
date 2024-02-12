@@ -5,22 +5,29 @@ import Lenis from '@studio-freight/lenis'
 import Footer from './components/Footer'
 import { Provider } from 'react-redux'
 import { store } from './apps/store'
+import { useEffect } from 'react'
 
 
 function App() {
 
-  const lenis = new Lenis()
+  // const lenis = new Lenis()
 
     // lenis.on('scroll', (e) => {
     //   console.log(e)
     // })
-  
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-  
-    requestAnimationFrame(raf)
+
+    useEffect(() => {
+
+      // window.scrollTo(0,0);
+      
+      // function raf(time) {
+      //   lenis.raf(time)
+      //   requestAnimationFrame(raf)
+      // }
+      
+      // requestAnimationFrame(raf)
+
+    }, [])
 
   return (
     <Provider store={store}>

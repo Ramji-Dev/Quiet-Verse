@@ -1,0 +1,89 @@
+.cart-item-con{
+    margin-top: 5%;
+    padding: 0 5%;
+}
+
+.cart-item{
+    border-bottom: 2px solid #9A3B3B;
+}
+
+.cart-book-img{
+    width: 20%;
+}
+
+.cart-item,
+.cart-price-and-delete,
+.cart-change-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.cart-book-name{
+    color: #9A3B3B;
+    font-family: Dbold;
+    font-weight: 500;
+    font-size: 1.6vw;
+    margin-bottom: 5%;
+}
+
+.cart-price-and-delete{
+    gap: 50%;
+    margin-bottom: 5%;
+}
+
+.ri-delete-bin-7-line{
+    color: #ebcec1;
+    font-size: 2vw;
+}
+
+.cart-book-price{
+    color: #9A3B3B;
+    font-family: light;
+    font-weight: 500;
+    font-size: 1.4vw;
+    padding-bottom: 2%;
+    border-bottom: 1px solid #9A3B3B;
+}
+
+.cart-buy-book-quantity{
+    color: #9A3B3B;
+    font-family: light;
+    font-weight: 500;
+    font-size: 1.2vw;
+    margin-bottom: 3%;
+}
+
+.cart-change-quantity{
+    gap: 2vw;
+    margin-bottom: 5%;
+}
+
+.cart-decrease,
+.cart-increase,
+.cart-real-quantity{
+    color: #9A3B3B;
+    font-family: regular;
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+
+.cart-change-btn{
+    border: none;
+    background-color: transparent;
+}
+
+.cart-shipping-details,
+.cart-shipping-span{
+    font-size: 1.2vw;
+}
+
+.cart-shipping-details{
+    color: #9A3B3B;
+    font-family: regular;
+    font-weight: 500;
+}
+
+.cart-shipping-span{
+    font-family: light;
+}

@@ -185,7 +185,7 @@ h3{
     
     .icons{
         width: 6vw;
-        padding: 0.5vw 1vw;
+        padding: 0.5vw 4vw;
     }
 
     .cart-dets{
@@ -237,7 +237,9 @@ h3{
 }
 
 @media (min-width: 768px) { 
-
+    .icons{
+        padding: 0.5vw 1vw;
+    }
 }
 
 @media (min-width: 860px) {
