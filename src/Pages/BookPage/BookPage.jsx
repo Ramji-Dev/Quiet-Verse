@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increaseQuantity, decreaseQuantity } from '../../features/bookQuantity/bookQuantitySlice'
 import './BookPage.css'
+import { Link } from 'react-router-dom'
 import { addBookToCart } from '../../features/addToCart/addToCartSlice'
 
 function BookPage() {
@@ -104,7 +105,7 @@ function BookPage() {
             <circle cx="100" cy="100" r="26.5625" fill="#B6EA8D"/>
           </svg>
           <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} onClick={() => handleAddToCartClick(id)}>Add to cart</button>
-          <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>Buy now</button>
+          <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}><Link to={'/cart'}>Buy now</Link></button>
         </div>
       </div>
     </div>

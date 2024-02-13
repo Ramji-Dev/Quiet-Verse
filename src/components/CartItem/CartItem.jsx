@@ -1,7 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import './CartItem.css'
+import { removeBookFromCart } from '../../features/addToCart/addToCartSlice';
 
-function CartItem({name, price, image}) {
+function CartItem({id, name, price, image}) {
+
+    const dispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(removeBookFromCart(id))
+    }
 
   return (
     <div className='cart-item-con'>
@@ -13,7 +21,7 @@ function CartItem({name, price, image}) {
                     <h5 className='cart-book-name'>{name}</h5>
                     <div className="cart-price-and-delete">
                         <h5 className='cart-book-price'>${price}</h5>
-                        <i className="ri-delete-bin-7-line"></i>
+                        <i className="ri-delete-bin-7-line" onClick={() => handleClick(id)}></i>
                     </div>
                     <div className="cart-quantity">
                     <h5 className='cart-buy-book-quantity'>Quantity :</h5>

@@ -1,0 +1,132 @@
+.cart-con,
+.button-price{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.button-price{
+    margin-top: 10%;
+    margin-right: 0;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart-total{
+    visibility: hidden;
+    background-color: transparent;
+    color: transparent;
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.subtotal{
+    padding: 9vw 4vw;
+    white-space: nowrap;
+}
+
+.subtotal,
+.buy-cart{
+    font-family: light;
+    font-weight: 500;
+    font-size: 5.5vw;
+    text-align: center;
+}
+
+.buy-cart{
+    width: 90vw;
+    color: #FFF3E2;
+    background-color: #9A3B3B;
+    border: none;
+    position: fixed;
+    top: 90%;
+    padding: 3%;
+    border-radius: 100vw;
+    letter-spacing: 0.1vw;
+    cursor: pointer;
+}
+
+@media (min-width: 420px) {
+    .buy-cart{
+        padding: 4%;
+    }
+}
+
+@media (min-width: 480px) {
+    .buy-cart{
+        padding: 3% ;
+    }
+}
+
+@media (min-width: 560px) {
+    .buy-cart{
+        padding: 2%;
+    }
+}
+
+@media (min-width: 640px) {
+    .buy-cart{
+        padding: 1%;
+        top: 91%;
+    }
+}
+
+@media (min-width: 768px) {
+    .cart-con,
+    .button-price{
+        align-items: start;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .button-price{
+        margin-top: 10%;
+        margin-right: 5%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cart-total{
+        visibility: visible;
+        background-color: #9A3B3B;
+        color: #FFF3E2;
+        border-radius: 1vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .subtotal{
+        padding: 9vw 4vw;
+        white-space: nowrap;
+    }
+    
+    .subtotal,
+    .buy-cart{
+        font-family: light;
+        font-weight: 500;
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    
+    .buy-cart{
+        width: fit-content;
+        color: #FFF3E2;
+        border: 2px solid #FFF3E2;
+        padding: 5% 25%;
+        position: absolute;
+        top: 75%;
+        border-radius: 100vw;
+        background-color: transparent;
+        letter-spacing: 0.1vw;
+        cursor: pointer;
+    }
+}

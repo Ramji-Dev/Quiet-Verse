@@ -11,6 +11,9 @@ export const addBook = createSlice({
     initialState,
     reducers: {
         addBookToCart: (state, action) => {
+
+            state.cartBooks = state.cartBooks.filter((book) => action.payload !== book.id && book);
+
             const [{id, name, price, title, image}] = books.filter((book) => action.payload === book.id && book);
 
             const selectedBook = {
@@ -24,10 +27,14 @@ export const addBook = createSlice({
             (state.cartBooks.length + 1 > 0) ? state.isCartEmpty = false : state.isCartEmpty = true;
 
             state.cartBooks.push(selectedBook);
+        },
+        removeBookFromCart: (state, action) => {
+            (state.cartBooks.length - 1 < 1) ? state.isCartEmpty = true : state.isCartEmpty = false;
+            state.cartBooks = state.cartBooks.filter((book) => action.payload !== book.id && book);
         }
     }
 })
 
-export const { addBookToCart } = addBook.actions
+export const { addBookToCart, removeBookFromCart } = addBook.actions
 
 export default addBook.reducer;

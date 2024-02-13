@@ -48,7 +48,7 @@ nav{
     backdrop-filter: blur(2px);
 }
 
-.cart-con{
+.cart-icon-con{
     position: relative;
     display: flex;
     justify-content: end;

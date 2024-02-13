@@ -89,7 +89,7 @@ function Navbar() {
                         <i className="ri-menu-fold-line menu-show" onClick={handleClick} ref={toggleRef}></i>
                         <i className="ri-close-fill close" onClick={handleClose} ref={closeRef}></i>
                         <Link to={'cart'}>
-                            <div className="cart-con">
+                            <div className="cart-icon-con">
                                 <div className="cart-dets" style={isCartEmpty ? {opacity: 0} : {opacity: 1}}></div>
                                 <i className="ri-shopping-cart-line cart" ref={cartRef}></i>
                             </div>
