@@ -2,14 +2,23 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import './CartItem.css'
 import { removeBookFromCart } from '../../features/addToCart/addToCartSlice';
+import { increaseCartQuantity, decreaseCartQuantity } from '../../features/addToCart/addToCartSlice'
 
-function CartItem({id, name, price, image}) {
+function CartItem({id, name, price, image, quantity}) {
 
     const dispatch = useDispatch();
 
     const handleClick = () => {
         dispatch(removeBookFromCart(id))
     }
+
+    const handleQuantity = (e) => {
+        if (e.target.id === 'cart-increase') {
+          dispatch(increaseCartQuantity({quantity, id}));
+        } else if (e.target.id === 'cart-decrease') {
+          dispatch(decreaseCartQuantity({quantity, id}));
+        }
+      }
 
   return (
     <div className='cart-item-con'>
@@ -27,11 +36,11 @@ function CartItem({id, name, price, image}) {
                     <h5 className='cart-buy-book-quantity'>Quantity :</h5>
                     <div className="cart-change-quantity">
                         <button className='cart-change-btn'>
-                            <h5 className='cart-decrease'>-</h5>
+                            <h5 className='cart-decrease' id='cart-decrease' onClick={handleQuantity}>-</h5>
                         </button>
-                        <h5 className='cart-real-quantity'>1</h5>
+                        <h5 className='cart-real-quantity'>{quantity}</h5>
                         <button className='cart-change-btn'>
-                            <h5 className='cart-increase'>+</h5>
+                            <h5 className='cart-increase' id='cart-increase' onClick={handleQuantity}>+</h5>
                         </button>
                     </div>
                 </div>

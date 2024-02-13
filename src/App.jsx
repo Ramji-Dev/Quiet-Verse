@@ -18,7 +18,7 @@ function App() {
 
     useEffect(() => {
 
-      // window.scrollTo(0,0);
+      window.scrollTo(0,0);
       
       // function raf(time) {
       //   lenis.raf(time)
@@ -31,9 +31,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Navbar />
-      <Outlet />
-      <Footer />
+        <Navbar />
+        <Outlet />
+        <Footer />
     </Provider>
   )
 }

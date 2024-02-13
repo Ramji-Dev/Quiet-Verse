@@ -8,8 +8,9 @@ function Paralib({image, text, bg}) {
 
   const paraRef = useRef(null);
   const tl = useRef(null);
-
+  
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
     tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: '.lib-img',
@@ -22,7 +23,7 @@ function Paralib({image, text, bg}) {
       y: -180
     })
 
-  }, {scope: paraRef})
+  }, {scope: paraRef.current})
 
   return (
         <div ref={paraRef}>

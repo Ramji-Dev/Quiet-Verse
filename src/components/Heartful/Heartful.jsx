@@ -3,24 +3,24 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import './Heartful.css'
-gsap.registerPlugin(ScrollTrigger)
 
 function Heartful() {
 
   const heartRef = useRef(null);
-
- useGSAP(() => {
-  gsap.to('.quote, .leaf-heart', {
-    opacity: 1,
-    stagger: 0.3,
-    duration: 1,
-    delay: 1 ,
-    scrollTrigger: {
-        scroller: 'body',
-        trigger: 'img',
-        start: '120% 75%',
-        // markers:1
-    }
+  
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('.quote, .leaf-heart', {
+      opacity: 1,
+      stagger: 0.3,
+      duration: 1,
+      delay: 1 ,
+      scrollTrigger: {
+          scroller: 'body',
+          trigger: 'img',
+          start: '120% 75%',
+          // markers:1
+      }
   })
 
  },{scope: heartRef.current})

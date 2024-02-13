@@ -22,7 +22,7 @@ function Form() {
     
   return (
     <div>
-        <form onSubmit={handleSubmit} className="form-con">
+        <form onSubmit={handleSubmit} id='write' className="form-con">
             <div className="write">
                 <h5 className='form-head'>Write Us</h5>
                 <hr className='form-line'/>

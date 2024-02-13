@@ -66,6 +66,11 @@
     margin-bottom: 5%;
 }
 
+.cart-increase,
+.cart-decrease{
+    cursor: pointer;
+}
+
 .cart-decrease,
 .cart-increase,
 .cart-real-quantity{
@@ -149,5 +154,9 @@
     .cart-shipping-details,
     .cart-shipping-span{
         font-size: 1vw;
+    }
+
+    .cart-change-quantity{
+        gap: 2vw;
     }
 }

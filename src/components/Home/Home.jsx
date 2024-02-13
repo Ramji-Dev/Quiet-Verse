@@ -18,14 +18,14 @@ function Home() {
     const allRef = useRef(null);
     const tl = useRef([null],[null],[null]);
     
-    useGSAP(() => {
+    useGSAP(() => {            
         gsap.to('h1', {
             opacity: 1,
             duration:1,
             delay: 0.4,
             stagger: 0.3
         })
-        
+    
         gsap.to('.orphaned, .image-context', {
             opacity: 1,
             stagger: 0.3,
@@ -49,13 +49,14 @@ function Home() {
                 scroller: 'body', 
                 trigger: 'hr',
                 start: 'top 80%',
+                end: 'top 70%',
                 // markers: {
-                //     startColor: "purple",
-                //     endColor: "fuchsia",
-                // }
-            }
+                    //     startColor: "purple",
+                    //     endColor: "fuchsia",
+                    // }
+                }
         })
-
+        
         gsap.to('.line-text', {
             opacity: 1,
             delay: 1,
@@ -63,10 +64,11 @@ function Home() {
                 scroller: 'body',
                 trigger: '.line-text',
                 start: 'top 80%',
+                end: 'top 75%',
                 // markers: 1,      
             }
         })
-
+        
         gsap.to('.anime', {
             opacity: 1,
             duration: 1.5,
@@ -79,9 +81,9 @@ function Home() {
               // toggleActions: "play none none resume"
             }
           })
-
-        tl.current[0] = gsap.timeline({
-            scrollTrigger: {
+          
+          tl.current[0] = gsap.timeline({
+              scrollTrigger: {
                 scroller: 'body',
                 trigger: '.saying-one',
                 start: 'center 70%',
@@ -101,8 +103,7 @@ function Home() {
             ease: Expo,
             opacity: 1
         },'transition')
-
-        // tl.current = gsap.timeline()
+        
         tl.current[1] = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container, .sayings, .library-head',
@@ -116,7 +117,7 @@ function Home() {
         },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
             color: '#FFF3E2',
         },'transition')
-
+        
         tl.current[2] = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container',
@@ -135,8 +136,8 @@ function Home() {
             .to('.about, h4, i', {
                 color: '#9A3B3B',
             },'transition')
-
-        gsap.to('.quiet', {
+            
+            gsap.to('.quiet', {
             scale: 1,
             opacity: 1,
             delay: 4,
@@ -152,12 +153,12 @@ function Home() {
                 scrub: 0.1
             }
         })
-
+        
     }, {scope: allRef.current})
-
-
+    
+    
     const { contextSafe } = useGSAP({scope: allRef})
-
+    
     const handleMouseMove = contextSafe((e, bgc, color) => {
         
         gsap.to('.pointer', {

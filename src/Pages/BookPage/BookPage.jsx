@@ -27,7 +27,7 @@ function BookPage() {
     }
 
     const handleAddToCartClick = () => {
-      dispatch(addBookToCart(id));
+      dispatch(addBookToCart({id, quantity}));
     }
 
     const { book } = useParams();
@@ -105,7 +105,7 @@ function BookPage() {
             <circle cx="100" cy="100" r="26.5625" fill="#B6EA8D"/>
           </svg>
           <button className='add'  onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} onClick={() => handleAddToCartClick(id)}>Add to cart</button>
-          <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}><Link to={'/cart'}>Buy now</Link></button>
+          <button className='buy' onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} onClick={() => handleAddToCartClick(id)}><Link to={'/cart'}>Buy now</Link></button>
         </div>
       </div>
     </div>

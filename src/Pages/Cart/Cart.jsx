@@ -7,9 +7,9 @@ function Cart() {
 
   const books = useSelector(state => state.addToCart.cartBooks)
 
-  const totalPrice = books.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price,0
-  );
+  const items = books.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
+
+  const totalPrice = books.reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.quantity),0);
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -19,22 +19,25 @@ function Cart() {
     <div className='cart-con'>
       <div className="cart-book">
         {
-          books.map(({id, name, image, price}) => {
+          books.map(({id, name, image, price, quantity}) => {
             return (
               <div key={id}>
-                <CartItem id={id} name={name} image={image} price={price} />
+                <CartItem id={id} name={name} image={image} price={price} quantity={quantity} />
               </div>
             )
           })
         }
       </div>
 
-        <div className="button-price">
-          <div className="cart-total">
-                <h6 className='subtotal'>Subtotal ({books.length} items): ${totalPrice}</h6>
+        {
+          books.length > 0 &&
+          <div className="button-price">
+            <div className="cart-total">
+                  <h6 className='subtotal'>Subtotal ({items} items): ${totalPrice}</h6>
+            </div>
+            <button className='buy-cart'>Buy Quietly</button>
           </div>
-          <button className='buy-cart'>Buy Quietly</button>
-        </div>
+        }
     </div>
   )
 }
