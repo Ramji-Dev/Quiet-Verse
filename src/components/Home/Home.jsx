@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Home.css'
 import gsap, { Expo} from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -53,7 +53,7 @@ function Home() {
                 trigger: '.line-text',
                 start: 'top 80%',
                 end: 'top 75%',
-                markers: 1
+                // markers: 1
             }
         })
         
@@ -197,7 +197,21 @@ function Home() {
         })
     })  
 
-    
+    useEffect(() => {
+
+        const handleReady = (e) => {
+          if (e.target.readyState === 'complete') {
+            ScrollTrigger.refresh();
+          }
+        }
+      
+        document.addEventListener('readystatechange', handleReady)
+      
+        return () => {
+          document.removeEventListener('readystatechange', handleReady)
+        }
+      },[])
+
     const limit = 6;
 
     const limitedBookData = books.slice(0, limit);
