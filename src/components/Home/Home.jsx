@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './Home.css'
 import gsap, { Expo} from 'gsap'
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'
 import Showcase from '../Showcase';
 import Heartful from '../Heartful';
@@ -11,11 +11,11 @@ import Socials from '../Socials';
 import { books } from '../../bookData';
 import { Link } from 'react-router-dom'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function Home() {
 
-    const allRef = useRef(null);
+    const allRef = useRef();
     const tl = useRef([null],[null],[null]);
     
     useGSAP(() => {            
@@ -51,9 +51,9 @@ function Home() {
                 start: 'top 80%',
                 end: 'top 70%',
                 // markers: {
-                    //     startColor: "purple",
-                    //     endColor: "fuchsia",
-                    // }
+                //         startColor: "purple",
+                //         endColor: "fuchsia",
+                //     }
                 }
         })
         
@@ -81,16 +81,15 @@ function Home() {
               // toggleActions: "play none none resume"
             }
           })
-          
-          tl.current[0] = gsap.timeline({
-              scrollTrigger: {
-                scroller: 'body',
-                trigger: '.saying-one',
-                start: 'center 70%',
-                end: 'center 60%',
-                // markers: 1,
-            }
-        })
+
+        tl.current[0] = gsap.timeline({
+        scrollTrigger: {
+            scroller: 'body',
+            trigger: '.saying-one',
+            start: 'center-=5% 70%',
+            end: 'center-=5% 60%',
+            // markers: 1,
+        }})
         .to('.saying-one', {
             x: '10%',
             duration: 1,
@@ -103,12 +102,12 @@ function Home() {
             ease: Expo,
             opacity: 1
         },'transition')
-        
+
         tl.current[1] = gsap.timeline({
             scrollTrigger: {
                 trigger: '.home-container, .sayings, .library-head',
-                start: 'center+=6% 60%',
-                end: 'center+=6% -20%',
+                start: 'center+=13% 60%',
+                end: 'center+=13% -20%',
                 // markers: 1,
                 scrub: 0.1
             }
@@ -117,6 +116,36 @@ function Home() {
         },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
             color: '#FFF3E2',
         },'transition')
+        
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+
+        tl.current[0] = gsap.timeline({
+            scrollTrigger: {
+                scroller: 'body',
+                trigger: '.saying-one',
+                start: 'center 70%',
+                end: 'center 60%',
+                // markers: 1,
+            }
+          })
+          
+
+            tl.current[1] = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.home-container, .sayings, .library-head',
+                    start: 'center+=6% 60%',
+                    end: 'center+=6% -20%',
+                    // markers: 1,
+                    scrub: 0.1
+                }
+            }).to('.home-container', {
+                backgroundColor: '#611D1B',
+            },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
+                color: '#FFF3E2',
+            },'transition')
+        })
         
         tl.current[2] = gsap.timeline({
             scrollTrigger: {
@@ -154,7 +183,7 @@ function Home() {
             }
         })
         
-    }, {scope: allRef.current})
+    }, {})
     
     
     const { contextSafe } = useGSAP({scope: allRef})
@@ -186,7 +215,7 @@ function Home() {
     const limitedBookData = books.slice(0, limit);
     
     return (
-        <div className="home-container" ref={allRef} >
+        <div className="home-container" ref={allRef}>
             <div className='heading'>
                 <h1>“Discover</h1>
                 <h1>Simplicity in</h1>
@@ -208,7 +237,7 @@ function Home() {
                 {
                      limitedBookData.map(({id, name, image, price, bgc, color}) => {
                         return (
-                            <div key={id} className='product' onMouseMove={(e) => handleMouseMove(e, bgc, color)} onMouseLeave={handleMouseLeave} >
+                            <div key={id} className='product' onMouseMove={(e) => handleMouseMove(e, bgc, color)} onMouseLeave={handleMouseLeave}>
                                 <Link to={`shop/${id}`}>
                                     <div className="anime">
                                         <div className="image">

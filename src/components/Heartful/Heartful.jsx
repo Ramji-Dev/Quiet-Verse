@@ -1,15 +1,16 @@
 import React, { useRef } from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'
 import './Heartful.css'
 
+gsap.registerPlugin(useGSAP, ScrollTrigger)
+
 function Heartful() {
 
-  const heartRef = useRef(null);
+  const heartRef = useRef();
   
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger)
     gsap.to('.quote, .leaf-heart', {
       opacity: 1,
       stagger: 0.3,
@@ -19,6 +20,7 @@ function Heartful() {
           scroller: 'body',
           trigger: 'img',
           start: '120% 75%',
+          end: '120% 65%',
           // markers:1
       }
   })
@@ -26,7 +28,7 @@ function Heartful() {
  },{scope: heartRef.current})
 
   return (
-    <div className='heart-con'  ref={heartRef}>
+    <div className='heart-con' ref={heartRef}>
         <div className="heart">
                 <div className="quote">
                     <p className='feeling'>Elevate minds, inspire hearts. Our books spark profound insights, fostering growth, resilience, and a lasting impact on readers.</p>

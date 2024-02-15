@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import {books} from '../../bookData'
 import gsap from 'gsap'
@@ -25,10 +25,23 @@ function BookPage() {
         dispatch(decreaseQuantity(quantity));
       }
     }
+    const bookPageRef = useRef(null);
+    const { contextSafe } = useGSAP({scope: bookPageRef})
 
-    const handleAddToCartClick = () => {
+    const handleAddToCartClick = contextSafe(() => {
+      
       dispatch(addBookToCart({id, quantity}));
-    }
+        gsap.to('.cart-msg', {
+          opacity: 1,
+          duration: 1,
+        })
+
+        setTimeout(() => {
+          gsap.to('.cart-msg', {
+            opacity: 0,
+          })
+        }, 1500);
+    })
 
     const { book } = useParams();
     
@@ -36,9 +49,7 @@ function BookPage() {
     
     const {id, name, title, price, image} = bookDetails
 
-    const bookPageRef = useRef(null);
 
-    const { contextSafe } = useGSAP({scope: bookPageRef.current})
 
     const handleMouseMove = contextSafe((e) => {
       gsap.to('.ball', {
@@ -59,8 +70,8 @@ function BookPage() {
     })
 
   return (
-    <div className='bookpage-con' ref={bookPageRef.current}>
-
+    <div className='bookpage-con' ref={bookPageRef}>
+      <h6 className='cart-msg'>Added</h6> 
       <div className="buy-book">
         <img src={`.${image}`} alt={name} className='buy-book-image'/>
       </div>

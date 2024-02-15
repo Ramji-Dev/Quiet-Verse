@@ -12,8 +12,7 @@ function Form() {
     });
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(userDetails);
+        e.preventDefault(); 
     }
 
     const handleChange = (e) => {

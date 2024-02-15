@@ -11,14 +11,13 @@ function Shop() {
         window.scrollTo(0,0)
     }, [])
     
-    let shopRef = useRef(null);
+    const shopRef = useRef();
 
     useGSAP(() => {
         gsap.to('.book-con', {
-            // delay: 1,
-            opacity: 1
+            opacity: 1,
         })
-    }, {scope: shopRef.current})
+    }, {scope: shopRef})
 
     
     

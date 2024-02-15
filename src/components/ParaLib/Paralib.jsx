@@ -1,29 +1,29 @@
 import React, { useRef } from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'
 import './Paralib.css'
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function Paralib({image, text, bg}) {
 
-  const paraRef = useRef(null);
-  const tl = useRef(null);
+  const paraRef = useRef();
+  const tl = useRef();
   
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    tl.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.lib-img',
-        start: 'top 10%',
-        end: 'top -150%',
-        scrub: true,
-      }
-    })
-    .to('.lib-img', {
-      y: -180
-    })
-
-  }, {scope: paraRef.current})
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.capsule',
+          start: 'top 80%',
+          end: 'top -150%',
+          scrub: true,
+          // markers: 1
+        }
+      })
+      .to('.capsule', {
+        y: 180
+      })
+  }, {scope: paraRef})
 
   return (
         <div ref={paraRef}>

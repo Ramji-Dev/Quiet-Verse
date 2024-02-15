@@ -23,6 +23,23 @@
     padding: 0 5%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-msg{ 
+    width: fit-content;
+    background-color: #ff6816;
+    color: #FFF3E2;
+    padding: 2% 4%;
+    position: absolute;
+    right: 5%;
+    border-radius: 100vw;
+    font-size: 3vw;
+    font-family: Dlight;
+    text-transform: uppercase;
+    letter-spacing: 0.1vw;
+    opacity: 0;
 }
 
 .buy-book,
@@ -146,12 +163,23 @@
 }
 
 @media (min-width: 640px) {
+    .cart-msg{
+        top: -5%;
+    }
+
     .buy-book-image{
         width: 50vw;
     }
 }
 
 @media (min-width: 768px) {
+    .cart-msg{
+        padding: 0.8% 1.4%;
+        font-size: 0.5vw;
+        top: 10%;
+        right: 1%;
+    }
+
     .bookpage-con{
         align-items: center;
         flex-direction: row;
