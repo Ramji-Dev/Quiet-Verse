@@ -26,19 +26,7 @@ function Home() {
             stagger: 0.3
         })
     
-        gsap.to('.orphaned, .image-context', {
-            opacity: 1,
-            stagger: 0.3,
-            duration: 1,
-            delay: 0.3 ,
-            scrollTrigger: {
-                scroller: 'body',
-                trigger: 'img',
-                start: 'top 75%',
-                end: 'top 10%',
-                // markers:1
-            }
-        })
+        
         
         gsap.to('hr', {
             width: '100%',
@@ -65,7 +53,7 @@ function Home() {
                 trigger: '.line-text',
                 start: 'top 80%',
                 end: 'top 75%',
-                // markers: 1,      
+                markers: 1
             }
         })
         

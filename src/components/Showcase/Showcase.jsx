@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import './Showcase.css'
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
 function Showcase() {
+
+  const showCaseRef = useRef()
+
+  useGSAP(() => {
+    gsap.to('.orphaned, .image-context', {
+      opacity: 1,
+      stagger: 0.3,
+      duration: 1,
+      delay: 0.3 ,
+      scrollTrigger: {
+          scroller: 'body',
+          trigger: 'img',
+          start: 'top 75%',
+          end: 'top 10%',
+          // markers:1
+      }
+  }, {scope: showCaseRef})
+})
+
   return (
     <div>
-        <div className="showcase">
+        <div className="showcase" ref={showCaseRef}>
                 <div className="image-con">
                     <img src="./images/orphaned.webp" alt="orphaned" className='orphaned'/>
                 </div>
