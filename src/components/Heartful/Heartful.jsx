@@ -21,7 +21,10 @@ function Heartful() {
           trigger: 'img',
           start: '120% 75%',
           end: '120% 65%',
-          // markers:1
+          markers: {
+            startColor: '#adff2d',
+            endColor: '#9A3B3B'
+          }
       }
   })
 

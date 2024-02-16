@@ -38,10 +38,10 @@ function Home() {
                 trigger: 'hr',
                 start: 'top 80%',
                 end: 'top 70%',
-                // markers: {
-                //         startColor: "purple",
-                //         endColor: "fuchsia",
-                //     }
+                markers: {
+                        startColor: "purple",
+                        endColor: "fuchsia",
+                    }
                 }
         })
         
