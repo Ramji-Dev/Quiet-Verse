@@ -50,7 +50,7 @@ function Navbar() {
             <menu ref={menuRef}>
                 <div className="pages">
                     <Link to={'shop'}><h3>Shop</h3></Link>
-                    <a href='/#library'><h3>Elevate</h3></a>
+                    <a href='/#elevate'><h3>Elevate</h3></a>
                     <a href='/#library'><h3>Library</h3></a>
                     <Link><h3>Donate</h3></Link>
                     <a href='#write'><h3>Write us</h3></a>

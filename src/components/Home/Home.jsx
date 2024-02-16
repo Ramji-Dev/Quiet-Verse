@@ -76,7 +76,10 @@ function Home() {
             trigger: '.saying-one',
             start: 'center-=5% 70%',
             end: 'center-=5% 60%',
-            // markers: 1,
+            // markers: {
+            //     startColor: 'purple',
+            //     endColor: 'blue'
+            // },
         }})
         .to('.saying-one', {
             x: '10%',
@@ -91,35 +94,30 @@ function Home() {
             opacity: 1
         },'transition')
 
-        tl.current[1] = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.home-container, .sayings, .library-head',
-                start: 'center+=13% 60%',
-                end: 'center+=13% -20%',
-                // markers: 1,
-                scrub: 0.1
-            }
-        }).to('.home-container', {
-            backgroundColor: '#611D1B',
-        },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
-            color: '#FFF3E2',
-        },'transition')
         
         let mm = gsap.matchMedia();
 
+        mm.add("(max-width: 768px", () => {
+            tl.current[1] = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.home-container, .sayings, .library-head',
+                    start: 'center+=13% 60%',
+                    end: 'center+=13% -20%',
+                    // markers: {
+                    //     startColor: "orange",
+                    //     endColor: 'yellow'
+                    // },
+                    scrub: 0.1
+                }
+            }).to('.home-container', {
+                backgroundColor: '#611D1B',
+            },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
+                color: '#FFF3E2',
+            },'transition')
+        })
+
         mm.add("(min-width: 768px)", () => {
-
-        tl.current[0] = gsap.timeline({
-            scrollTrigger: {
-                scroller: 'body',
-                trigger: '.saying-one',
-                start: 'center 70%',
-                end: 'center 60%',
-                // markers: 1,
-            }
-          })
-          
-
+            
             tl.current[1] = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.home-container, .sayings, .library-head',
@@ -136,39 +134,39 @@ function Home() {
         })
         
         tl.current[2] = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.home-container',
-                start: 'center+=9% -100%',
-                end: 'center+=9% -200%',
-                // markers: {
-                //         startColor: '#adff2d',
-                //         endColor: '#242424'
-                //     },
-                    scrub: 0.1
-                }
-            })
-            .to('.home-container', {
-                backgroundColor: '#FFF3E2'
-            },'transition')
-            .to('.about, h4, i', {
-                color: '#9A3B3B',
-            },'transition')
-            
-            gsap.to('.quiet', {
-            scale: 1,
-            opacity: 1,
-            delay: 4,
-            scrollTrigger: {
-                trigger: '.quiet',
-                start: 'bottom-=3% 100%',
-                end: 'bottom-=3% 80%',
-                // markers: {
-                //     startColor: '#adff2d',
-                //     endColor: '#242424',
-                //     fontSize: '2vw'
-                // },
+        scrollTrigger: {
+            trigger: '.home-container',
+            start: 'center+=9% -100%',
+            end: 'center+=9% -200%',
+            // markers: {
+            //         startColor: '#adff2d',
+            //         endColor: '#242424'
+            //     },
                 scrub: 0.1
             }
+        })
+        .to('.home-container', {
+            backgroundColor: '#FFF3E2'
+        },'transition')
+        .to('.about, h4, i', {
+            color: '#9A3B3B',
+        },'transition')
+            
+        gsap.to('.quiet', {
+        scale: 1,
+        opacity: 1,
+        delay: 4,
+        scrollTrigger: {
+            trigger: '.quiet',
+            start: 'bottom-=3% 100%',
+            end: 'bottom-=3% 80%',
+            // markers: {
+            //     startColor: '#adff2d',
+            //     endColor: '#242424',
+            //     fontSize: '2vw'
+            // },
+            scrub: 0.1
+        }
         })
         
     }, {})
@@ -197,20 +195,6 @@ function Home() {
         })
     })  
 
-    useEffect(() => {
-
-        const handleReady = (e) => {
-          if (e.target.readyState === 'complete') {
-            ScrollTrigger.refresh();
-          }
-        }
-      
-        document.addEventListener('readystatechange', handleReady)
-      
-        return () => {
-          document.removeEventListener('readystatechange', handleReady)
-        }
-      },[])
 
     const limit = 6;
 
