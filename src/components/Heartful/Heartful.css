@@ -17,11 +17,12 @@
 }
 
 .feeling{
-    font-family: bold;
+    font-family: regular;
     color: #9A3B3B;
     margin-bottom: 10%;
     letter-spacing: 0.2vw;
-    font-size: 4.5vw;    
+    font-size: 4.5vw;  
+    font-weight: 900;  
 }
 
 .leaf-heart{

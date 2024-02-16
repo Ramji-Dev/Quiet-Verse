@@ -113,6 +113,7 @@ function Home() {
                 backgroundColor: '#611D1B',
             },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
                 color: '#FFF3E2',
+                stroke: '#FFF3E2'
             },'transition')
         })
 
@@ -130,6 +131,7 @@ function Home() {
                 backgroundColor: '#611D1B',
             },'transition').to('.sayings, .library-head, h4, i, .nav-svg', {
                 color: '#FFF3E2',
+                stroke: '#FFF3E2'
             },'transition')
         })
         
@@ -148,8 +150,9 @@ function Home() {
         .to('.home-container', {
             backgroundColor: '#FFF3E2'
         },'transition')
-        .to('.about, h4, i', {
+        .to('.about, h4, i, .nav-svg', {
             color: '#9A3B3B',
+            stroke: '#9A3B3B'
         },'transition')
             
         gsap.to('.quiet', {

@@ -8,8 +8,9 @@
 .library-head{
     color: #9A3B3B;
     margin-bottom: 5%;
-    font-family: Dregular;
+    font-family: Dlight;
     font-size: 8vw;
+    font-weight: 900;
     text-transform: uppercase;
 }
 

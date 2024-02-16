@@ -58,8 +58,9 @@ hr{
 
 .text-mind,
 .text-heart{
-    font-family: bold;
+    font-family: regular;
     font-size: 2.5vw;
+    font-weight: 900;
     color: #9A3B3B;
     letter-spacing: 0.3vw;
     padding: 0 1vw;

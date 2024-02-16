@@ -8,12 +8,6 @@ a{
     color: #9A3B3B;
 }
 
-/* .container{
-    min-height: 100svh;
-    position: relative;  
-    overflow: hidden
-} */
-
 nav{
     /* background-color: red; */
     width: 100%;
@@ -32,6 +26,7 @@ nav{
 
 .nav-svg{
     width: 8vw;
+    stroke: #9A3B3B;
 }
 
 .icons{
