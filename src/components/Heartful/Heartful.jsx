@@ -11,22 +11,46 @@ function Heartful() {
   const heartRef = useRef();
   
   useGSAP(() => {
-    gsap.to('.quote, .leaf-heart', {
-      opacity: 1,
-      stagger: 0.3,
-      duration: 1,
-      delay: 1 ,
-      scrollTrigger: {
-          scroller: 'body',
-          trigger: 'img',
-          start: '120% 75%',
-          end: '120% 65%',
-          markers: {
-            startColor: '#adff2d',
-            endColor: '#9A3B3B'
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(max-width: 768px)", () => {
+      gsap.to('.quote, .leaf-heart', {
+        opacity: 1,
+        stagger: 0.3,
+        duration: 1,
+        delay: 1 ,
+        scrollTrigger: {
+            scroller: 'body',
+            trigger: 'img',
+            start: 'bottom+=80% 75%',
+            end: 'bottom+=80% 65%',
+            // markers: {
+            //   startColor: '#adff2d',
+            //   endColor: '#9A3B3B'
+            // }
           }
-      }
-  })
+      })   
+    })
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.to('.quote, .leaf-heart', {
+        opacity: 1,
+        stagger: 0.3,
+        duration: 1,
+        delay: 1 ,
+        scrollTrigger: {
+            scroller: 'body',
+            trigger: 'img',
+            start: '120% 75%',
+            end: '120% 65%',
+            // markers: {
+            //   startColor: '#adff2d',
+            //   endColor: '#9A3B3B'
+            // }
+          }
+      })
+    })
 
  },{scope: heartRef.current})
 

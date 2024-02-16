@@ -5,32 +5,32 @@
 
 @font-face {
   font-family: bold;
-  src: url(./fonts/Almarena-Bold.ttf);
+  src: url(./fonts/Almarena-Bold.woff2);
 }
 
 @font-face {
   font-family: regular;
-  src: url(./fonts/Almarena-Regular.ttf);
+  src: url(./fonts/Almarena-Regular.woff2);
 }
 
 @font-face {
   font-family: light;
-  src: url(./fonts/Almarena-Light.ttf);
+  src: url(./fonts/Almarena-Light.woff2);
 }
 
 @font-face {
   font-family: Dbold;
-  src: url(./fonts/Almarena-Display-Bold.ttf);
+  src: url(./fonts/Almarena-Display-Bold.woff2);
 }
 
 @font-face {
   font-family: Dregular;
-  src: url(./fonts/Almarena-Display-Regular.ttf);
+  src: url(./fonts/Almarena-Display-Regular.woff2);
 }
 
 @font-face {
   font-family: Dlight;
-  src: url(./fonts/Almarena-Display-Light.ttf);
+  src: url(./fonts/Almarena-Display-Light.woff2);
 }
 
 
