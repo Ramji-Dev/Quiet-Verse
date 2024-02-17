@@ -244,31 +244,8 @@ h3{
     }
 }
 
-@media (min-width: 1024px) { 
-
-}
-
-@media (min-width: 1280px) { 
-
-}
-
-@media (min-width: 1536px) { 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/* for landscape */
-/* @media only screen and (orientation: landscape) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 1024px) and (orientation: landscape) {
     .links{
         display: none;
     }
-} */
+}

@@ -1,3 +1,8 @@
+.cart-con{
+    min-height: 100svh;
+    position: relative;
+}
+
 .cart-con,
 .button-price{
     display: flex;
@@ -5,6 +10,21 @@
     position: relative;
     justify-content: space-between;
     flex-direction: column;
+}
+
+.cart-purchase{
+    width: fit-content;
+    background-color: #ff6816;
+    color: #FFF3E2;
+    padding: 2% 4%;
+    position: absolute;
+    top: 50%;
+    border-radius: 100vw;
+    font-size: 3vw;
+    font-family: Dlight;
+    text-transform: uppercase;
+    letter-spacing: 0.1vw;
+    opacity: 0;
 }
 
 .button-price{
@@ -83,6 +103,11 @@
         align-items: start;
         justify-content: center;
         flex-direction: row;
+    }
+
+    .cart-purchase{
+        padding: 0.8% 1.4%;
+        font-size: 1vw;
     }
 
     .button-price{

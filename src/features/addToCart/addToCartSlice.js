@@ -37,10 +37,14 @@ export const addBook = createSlice({
         },
         decreaseCartQuantity: (state, action) => {
             (action.payload.quantity > 1  && action.payload.quantity <= 10) ? state.cartBooks.filter((book) => action.payload.id === book.id && (book.quantity -= 1)) : alert("Can't go below 1")
+        },
+        emptyCart: (state, action) => {
+            state.cartBooks = [];
+            state.isCartEmpty = true;
         }
     }
 })
 
-export const { addBookToCart, removeBookFromCart, increaseCartQuantity, decreaseCartQuantity } = addBook.actions
+export const { addBookToCart, removeBookFromCart, increaseCartQuantity, decreaseCartQuantity, emptyCart } = addBook.actions
 
 export default addBook.reducer;

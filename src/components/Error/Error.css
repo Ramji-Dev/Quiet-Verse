@@ -1,0 +1,41 @@
+.error-con{
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.error-msg{
+    font-size: 8vw;
+    font-family: Dbold;
+    color: #9A3B3B;
+    margin-bottom: 10%;
+    font-weight: 500;
+}
+
+.back-home{
+    width: 40vw;
+    font-family: light;
+    text-align: center;
+    font-size: 4vw;
+    padding: 10%;
+    text-transform:capitalize;
+    border-radius: 100vw;
+    transition: all ease-in-out 0.3s;
+}
+
+.back-home:hover{
+    background-color: #9a3b3b27;
+}
+
+@media (min-width: 640px) {
+    .error-msg{
+        margin-bottom: 5%;
+    }
+    
+    .back-home{
+        width: 15vw;
+        font-size: 1.5vw;
+    }
+}

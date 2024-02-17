@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import CartItem from '../../components/CartItem'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { emptyCart } from '../../features/addToCart/addToCartSlice'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 import './Cart.css'
 
 function Cart() {
 
-  const books = useSelector(state => state.addToCart.cartBooks)
+  const books = useSelector(state => state.addToCart.cartBooks);
 
   const items = books.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
 
@@ -15,8 +18,28 @@ function Cart() {
     window.scrollTo(0,0);
   }, [])
 
+  const ref = useRef();
+  const {contextSafe} = useGSAP({scope: ref}) 
+
+  const dispatch = useDispatch();
+  const handleClick = contextSafe(() => {
+    dispatch(emptyCart(books))
+
+    gsap.to('.cart-purchase', {
+      opacity: 1,
+      delay: 0.3
+    })
+
+    setTimeout(() => {
+      gsap.to('.cart-purchase', {
+        opacity: 0
+      })
+    }, 2000);
+  })
+
   return (
-    <div className='cart-con'>
+    <div className='cart-con' ref={ref}>
+      <h6 className='cart-purchase'>Purchase Successful</h6> 
       <div className="cart-book">
         {
           books.map(({id, name, image, price, quantity}) => {
@@ -35,7 +58,7 @@ function Cart() {
             <div className="cart-total">
                   <h6 className='subtotal'>Subtotal ({items} items): ${totalPrice}</h6>
             </div>
-            <button className='buy-cart'>Buy Quietly</button>
+            <button className='buy-cart' onClick={handleClick}>Buy Quietly</button>
           </div>
         }
     </div>

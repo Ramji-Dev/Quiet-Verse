@@ -101,6 +101,7 @@ hr{
     font-family: light;
     font-weight: 500;
     font-size: 2.5vw;
+    text-transform: capitalize;
 }
 
 .anime{
@@ -270,13 +271,8 @@ hr{
     }
 }
 
-@media (min-width: 1024px) { 
-    
-}
-
-@media (min-width: 1280px) { 
-}
-
-
-@media (min-width: 1536px) { 
+@media only screen and (min-device-width: 414px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .pointer{
+        display: none;
+    }
 }

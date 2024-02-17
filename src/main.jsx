@@ -4,9 +4,8 @@ import App from './App.jsx'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import './index.css'
 import 'remixicon/fonts/remixicon.css'
-import About from './components/About.jsx'
 import Home from './components/Home'
-import Error from './components/Error.jsx'
+import Error from './components/Error'
 import Shop from './Pages/Shop'
 import BookPage from './Pages/BookPage'
 import SharedLayout from './Pages/SharedLayout.jsx'
@@ -16,7 +15,6 @@ const route = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
-      <Route path='about' element={<About />} />
       <Route path='*' element={<Error />} />
       <Route path='shop' element={<SharedLayout />}>
           <Route index element={<Shop />} />

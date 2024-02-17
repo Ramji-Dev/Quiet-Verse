@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import './Home.css'
-import gsap, { Expo} from 'gsap'
+import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'
 import Showcase from '../Showcase';
@@ -31,7 +31,7 @@ function Home() {
         gsap.to('hr', {
             width: '100%',
             duration: 1.5,
-            ease: Expo,
+            ease: 'expo',
             opacity: 1,
             scrollTrigger: {
                 scroller: 'body', 
@@ -84,20 +84,20 @@ function Home() {
         .to('.saying-one', {
             x: '10%',
             duration: 1,
-            ease: Expo,
+            ease: 'expo.out',
             opacity: 1
         },'transition')
         .to('.saying-two', {
             x: '-15%',
             duration: 1,
-            ease: Expo,
+            ease: 'expo.out',
             opacity: 1
         },'transition')
 
         
         let mm = gsap.matchMedia();
 
-        mm.add("(max-width: 768px", () => {
+        mm.add("(max-width: 768px)", () => {
             tl.current[1] = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.home-container, .sayings, .library-head',
