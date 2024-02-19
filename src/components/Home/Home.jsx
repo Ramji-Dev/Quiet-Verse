@@ -115,9 +115,29 @@ function Home() {
                 color: '#FFF3E2',
                 stroke: '#FFF3E2'
             },'transition')
+
+            tl.current[2] = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.home-container',
+                    start: 'center+=9% -100%',
+                    end: 'center+=9% -180%',
+                    // markers: {
+                    //         startColor: 'red',
+                    //         endColor: 'purple'
+                    //     },
+                        scrub: 0.1
+                    }
+                })
+                .to('.home-container', {
+                    backgroundColor: '#FFF3E2'
+                },'home')
+                .to('.about, h4, i, .nav-svg', {
+                    color: '#9A3B3B',
+                    stroke: '#9A3B3B'
+                },'home')
         })
 
-        mm.add("(min-width: 768px)", () => {
+        mm.add("(min-width: 769px)", () => {
             
             tl.current[1] = gsap.timeline({
                 scrollTrigger: {
@@ -133,27 +153,29 @@ function Home() {
                 color: '#FFF3E2',
                 stroke: '#FFF3E2'
             },'transition')
+
+            tl.current[2] = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.home-container',
+                    start: 'center+=9% -100%',
+                    end: 'center+=9% -200%',
+                    // markers: {
+                    //         startColor: '#adff2d',
+                    //         endColor: '#242424'
+                    //     },
+                    scrub: 0.1
+                    }
+                })
+                .to('.home-container', {
+                    backgroundColor: '#FFF3E2'
+                },'home')
+                .to('.about, h4, i, .nav-svg', {
+                    color: '#9A3B3B',
+                    stroke: '#9A3B3B'
+                },'home')
         })
         
-        tl.current[2] = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.home-container',
-            start: 'center+=9% -100%',
-            end: 'center+=9% -200%',
-            // markers: {
-            //         startColor: '#adff2d',
-            //         endColor: '#242424'
-            //     },
-                scrub: 0.1
-            }
-        })
-        .to('.home-container', {
-            backgroundColor: '#FFF3E2'
-        },'transition')
-        .to('.about, h4, i, .nav-svg', {
-            color: '#9A3B3B',
-            stroke: '#9A3B3B'
-        },'transition')
+        
             
         gsap.to('.quiet', {
         scale: 1,

@@ -6,6 +6,12 @@
 .book-con{
     opacity: 0;
     margin-bottom: 5%;
+    transition: all ease-in-out 0.4s;
+}
+
+.book-con:hover{
+    scale: 1.1;
+    filter: drop-shadow(0 0 80px #9A3B3B);
 }
 
 .shop-con,

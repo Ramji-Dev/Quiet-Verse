@@ -13,6 +13,13 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
+        setUserDetails({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            comment: ''
+        })
     }
 
     const handleChange = (e) => {
@@ -32,7 +39,7 @@ function Form() {
                     type="text" 
                     name='firstName' 
                     onChange={handleChange} 
-                    value={userDetails.name} 
+                    value={userDetails.firstName} 
                     placeholder='First Name' 
                     required 
                     className='first-name'/>
