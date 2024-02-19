@@ -30,7 +30,6 @@
     margin-bottom: 0;
     scale: 1.5;
     transform: translateY(10%);
-    /* border: 5px black solid; */
 }
 
 @media (min-width: 640px) {

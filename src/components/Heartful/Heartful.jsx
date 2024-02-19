@@ -24,11 +24,7 @@ function Heartful() {
             scroller: 'body',
             trigger: 'img',
             start: 'bottom+=80% 75%',
-            end: 'bottom+=80% 65%',
-            // markers: {
-            //   startColor: '#adff2d',
-            //   endColor: '#9A3B3B'
-            // }
+            end: 'bottom+=80% 65%'
           }
       })   
     })
@@ -43,11 +39,7 @@ function Heartful() {
             scroller: 'body',
             trigger: 'img',
             start: '120% 75%',
-            end: '120% 65%',
-            // markers: {
-            //   startColor: '#adff2d',
-            //   endColor: '#9A3B3B'
-            // }
+            end: '120% 65%'
           }
       })
     })

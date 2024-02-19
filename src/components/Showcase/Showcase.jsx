@@ -20,8 +20,7 @@ function Showcase() {
           scroller: 'body',
           trigger: 'img',
           start: 'top 75%',
-          end: 'top 10%',
-          // markers:1
+          end: 'top 10%'
       }
     }, {scope: showCaseRef})
   })

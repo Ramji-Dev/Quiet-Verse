@@ -16,8 +16,7 @@ function Paralib({image, text, bg}) {
           trigger: '.capsule',
           start: 'top 80%',
           end: 'top -150%',
-          scrub: true,
-          // markers: 1
+          scrub: true
         }
       })
       .to('.capsule', {

@@ -57,10 +57,6 @@ cite{
     
 }
 
-/* .description{
-    padding: 8%;
-} */
-
 .desc-con{
     padding: 5%;
     display: flex;
@@ -91,7 +87,6 @@ cite{
 @media (min-width: 640px) {
     .showcase{
         flex-direction: row;
-        /* padding: 0; */
         justify-content: space-evenly;
     }
 
@@ -130,10 +125,6 @@ cite{
     .title{
         font-size: 2vw;
     }
-}
-
-@media (min-width: 768px) {
-
 }
 
 @media (min-width: 1024px) { 

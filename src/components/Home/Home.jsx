@@ -37,11 +37,7 @@ function Home() {
                 scroller: 'body', 
                 trigger: 'hr',
                 start: 'top 80%',
-                end: 'top 70%',
-                // markers: {
-                //         startColor: "purple",
-                //         endColor: "fuchsia",
-                //     }
+                end: 'top 70%'
             }
         })
         
@@ -52,8 +48,7 @@ function Home() {
                 scroller: 'body',
                 trigger: '.line-text',
                 start: 'top 80%',
-                end: 'top 75%',
-                // markers: 1
+                end: 'top 75%'
             }
         })
         
@@ -64,9 +59,7 @@ function Home() {
             scrollTrigger: {
               trigger: '.anime',
               start: 'center 85%',
-              end: 'center 70%',
-              // markers: 1,
-              // toggleActions: "play none none resume"
+              end: 'center 70%'
             }
           })
 
@@ -75,11 +68,7 @@ function Home() {
             scroller: 'body',
             trigger: '.saying-one',
             start: 'center-=5% 70%',
-            end: 'center-=5% 60%',
-            // markers: {
-            //     startColor: 'purple',
-            //     endColor: 'blue'
-            // },
+            end: 'center-=5% 60%'
         }})
         .to('.saying-one', {
             x: '10%',
@@ -103,10 +92,6 @@ function Home() {
                     trigger: '.home-container, .sayings, .library-head',
                     start: 'center+=13% 60%',
                     end: 'center+=13% -20%',
-                    // markers: {
-                    //     startColor: "orange",
-                    //     endColor: 'yellow'
-                    // },
                     scrub: 0.1
                 }
             }).to('.home-container', {
@@ -121,10 +106,6 @@ function Home() {
                     trigger: '.home-container',
                     start: 'center+=9% -100%',
                     end: 'center+=9% -180%',
-                    // markers: {
-                    //         startColor: 'red',
-                    //         endColor: 'purple'
-                    //     },
                         scrub: 0.1
                     }
                 })
@@ -144,7 +125,6 @@ function Home() {
                     trigger: '.home-container, .sayings, .library-head',
                     start: 'center+=6% 60%',
                     end: 'center+=6% -20%',
-                    // markers: 1,
                     scrub: 0.1
                 }
             }).to('.home-container', {
@@ -159,10 +139,6 @@ function Home() {
                     trigger: '.home-container',
                     start: 'center+=9% -100%',
                     end: 'center+=9% -200%',
-                    // markers: {
-                    //         startColor: '#adff2d',
-                    //         endColor: '#242424'
-                    //     },
                     scrub: 0.1
                     }
                 })
@@ -185,11 +161,6 @@ function Home() {
             trigger: '.quiet',
             start: 'bottom-=3% 100%',
             end: 'bottom-=3% 80%',
-            // markers: {
-            //     startColor: '#adff2d',
-            //     endColor: '#242424',
-            //     fontSize: '2vw'
-            // },
             scrub: 0.1
         }
         })
