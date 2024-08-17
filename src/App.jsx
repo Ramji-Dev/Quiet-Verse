@@ -13,6 +13,16 @@ function App() {
       window.scrollTo(0,0);
     }, [])
 
+    useEffect(() => {
+      const url = String(import.meta.env.VITE_URL);
+      const check = async () => {
+        await fetch(url, {
+          method: "POST"
+        })
+      }
+      check();
+    }, [])
+
   return (
     <Provider store={store}>
         <Navbar />
